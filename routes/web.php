@@ -24,7 +24,7 @@ Route::get('/token', function () {
     return view('pages.token');
 });
 
-//Route::post('/registration','RegistersController@registration');
+Route::post('/registration','RegistersController@registration');
 
 //Route::post('/registo','UserRegisterController@create')->name('userRegister');
 

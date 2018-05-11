@@ -1,12 +1,11 @@
 @extends('layouts.app')
-<!-- Main layout -->
-
+@section('content')
+<?php use App\Http\Controllers\clientController;?>
 <body>
     <main class="mt-5 pt-5">
         <div class="container">
 
             <!--Section: Cards-->
-            <section class="pt-5">
                 <!--Grid row-->
                 <div class="row wow fadeIn">
                     <form id="dados-do-cliente">
@@ -47,7 +46,7 @@
                         <div class="text-center mt-4">
                             <button class="btn btn-mdb-color waves-effect waves-light" type="submit">Alterar<i class="fa fa-paper-plane-o ml-2"></i></button>
                             <button class="btn btn-mdb-color waves-effect waves-light" type="submit">Remover<i class="fa fa-paper-plane-o ml-2"></i></button>
-                            <button class="btn btn-mdb-color waves-effect waves-light" >Pedir Exclusão<i class="fa fa-paper-plane-o ml-2"></i></button>
+                            <button class="btn btn-mdb-color waves-effect waves-light" onclick="pedirExclusao();" >Pedir Exclusão<i class="fa fa-paper-plane-o ml-2"></i></button>
                         </div>
                     </form>
                     <!-- Default form contact -->
@@ -56,14 +55,18 @@
                 <!--Grid row-->
 
                 <hr class="mb-5">
-
-            </section>
-            <!--Section: Cards-->
-
         </div>
     </main>
 </body>
+@endsection
 <script>
+/*
+function pedirExclusao(){
+    event.preventDefault();
+    {{clientController::pedirExclusao()}}
+}
+*/
+
   window.onload = function() {
        //obter os inputs
        var inputArray = new Array();
