@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt">
 
-<head>
+    <head>
 
-    @yield('head')
+        @yield('head')
 
-</head>
+    </head>
 
-    <body>
+    <body style="height: 100%;">
 
         <!--Main Navigation-->
         <header>
@@ -17,7 +17,9 @@
         </header>
 
         <!-- <main class="mt-5 pt-5"> -->
-        @yield('main')
+        <div style="margin-top:65px;">
+            @yield('main')
+        </div>
         <!-- </main> -->
 
         <!-- <footer class="page-footer text-center font-small mdb-color darken-2 mt-4 wow fadeIn"> -->

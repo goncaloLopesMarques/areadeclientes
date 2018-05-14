@@ -22754,7 +22754,7 @@ a.pswp__share--download:hover {
     height: 22px;
     border-style: solid;
     border-width: 2px;
-    border-color: transparent #4285f4 #4285f4 transparent;
+    border-color: transparent var(--main-color) var(--main-color) transparent;
     -webkit-transform: rotate(40deg);
     -ms-transform: rotate(40deg);
     transform: rotate(40deg);

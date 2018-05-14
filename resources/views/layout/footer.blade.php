@@ -1,10 +1,10 @@
 <!--Footer-->
-    <footer class="page-footer text-center font-small mdb-color darken-2 mt-4 wow fadeIn">
+    <footer class="page-footer text-center font-small mdb-color darken-2 mt-4 wow fadeIn" style="position: absolute;bottom: 0;width: 100%;">
 
-        <hr class="my-4">
+        {{-- <hr class="my-4"> --}}
 
         <!-- Social icons -->
-        <div class="pb-4">
+        <div class="py-3">
             <a href="https://www.facebook.com/mdbootstrap" target="_blank">
                 <i class="fa fa-facebook mr-3"></i>
             </a>
