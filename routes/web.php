@@ -14,6 +14,11 @@
 
 
 
+Route::get('/teste', function () {
+    return view('pages.token');
+});
+
+
 Route::get('/crm', function () {
     return view('pages.suitecrm');
 });
