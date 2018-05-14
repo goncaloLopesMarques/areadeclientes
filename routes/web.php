@@ -32,4 +32,4 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/clientHome', 'clientController@index')->name('clientHome');
-
+Route::get('/clientHome/exclusao', 'clientController@exclusao')->name('clienteExclusao');
