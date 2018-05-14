@@ -8,7 +8,7 @@ $sessId="";
 
 class clientService {
 
-    private function suiteCrmRequester($method, $arguments){
+    private function SuiteCrmRequester($method, $arguments){
         $url = "https://www.crmcheeruptravelgroup.com/service/v4_1/rest.php";
     
         $curl = curl_init($url);
@@ -27,8 +27,37 @@ class clientService {
         return json_decode($result,1);
     }
 
-    public static function pedirExclusao($clientId){
-        $sessId = (new self)->login();
+    public static function AlterarDados($clientId, $data){
+        $sessId = (new self)->Login();
+
+        $entryArgs = array(
+         //Session id - retrieved from login call
+            'session' => $sessId,
+         //Module to get_entry_list for
+            'module_name' => 'Contacts',
+         //First and last names.
+            'name_value_list' => array(
+             array("name" => "id", "value" => "$clientId"),
+             array("name" => "first_name", "value" => $data[0]),
+             array("name" => "last_name", "value" => $data[1]),
+             array("name" => "email1", "value" => $data[2]),
+             array("name" => "phone_mobile", "value" => $data[3]),
+             array("name" => "phone_work", "value" => $data[4]),
+             array("name" => "primary_address_street", "value" => $data[5]),
+          ),  
+           //Show 10 max results
+                  'max_results' => 10,
+           //Do not show deleted
+                  'deleted' => 0,
+         );
+       
+         $result =(new self)->SuiteCrmRequester('set_entry',$entryArgs);
+         (new self)->SuiteCrmRequester('logout',$sessId);
+
+      }
+
+    public static function PedirExclusao($clientId){
+        $sessId = (new self)->Login();
 
          $entryArgs = array(
           //Session id - retrieved from login call
@@ -46,13 +75,33 @@ class clientService {
                    'deleted' => 0,
           );
         
-          $result =(new self)->suiteCrmRequester('set_entry',$entryArgs);
-   
-        var_dump($result);
-         //["entry_list"][0]["name_value_list"]["name"] 
+          $result =(new self)->SuiteCrmRequester('set_entry',$entryArgs);
+          (new self)->SuiteCrmRequester('logout',$sessId);
+      }
+      public static function PedirRemocao($clientId){
+        $sessId = (new self)->Login();
+
+         $entryArgs = array(
+          //Session id - retrieved from login call
+             'session' => $sessId,
+          //Module to get_entry_list for
+             'module_name' => 'Contacts',
+          //First and last names.
+             'name_value_list' => array(
+              array("name" => "id", "value" => "$clientId"),
+              array("name" => "invalid_email", "value" => 1),
+           ),  
+            //Show 10 max results
+                   'max_results' => 10,
+            //Do not show deleted
+                   'deleted' => 0,
+          );
+        
+          $result =(new self)->SuiteCrmRequester('set_entry',$entryArgs);
+          (new self)->SuiteCrmRequester('logout',$sessId);
       }
 
-      private function login(){
+      private function Login(){
         global $sessId;
              
            $userAuth = array(
@@ -76,10 +125,11 @@ class clientService {
       
        return $sessId;
       }
-      public function getSuiteCrmData($clientId){
+
+      public function GetSuiteCrmData($clientId){
         global $sessId;
       
-        $sessId = (new self)->login();
+        $sessId = (new self)->Login();
 
         $entryArgs = array(
             //Session id - retrieved from login call
@@ -97,9 +147,9 @@ class clientService {
               //Do not show deleted
                      'deleted' => 0,
             );
-            $result = (new self)->suiteCrmRequester('get_entry',$entryArgs);
-            (new self)->suiteCrmRequester('logout',$sessId);
-           //  var_dump($result);
+            $result = (new self)->SuiteCrmRequester('get_entry',$entryArgs);
+            (new self)->SuiteCrmRequester('logout',$sessId);
+             var_dump($result);
             /*
            var_dump($result["entry_list"][0]["name_value_list"]["first_name"]["value"]);
            var_dump($result["entry_list"][0]["name_value_list"]["last_name"]["value"]);
@@ -110,7 +160,7 @@ class clientService {
           $resultArray = array($result["entry_list"][0]["name_value_list"]["first_name"]["value"],$result["entry_list"][0]["name_value_list"]["last_name"]["value"],
                                $result["entry_list"][0]["name_value_list"]["phone_mobile"]["value"],$result["entry_list"][0]["name_value_list"]["phone_work"]["value"],
                                $result["entry_list"][0]["name_value_list"]["email1"]["value"],$result["entry_list"][0]["name_value_list"]["primary_address_street"]["value"],
-                               $result["entry_list"][0]["name_value_list"]["email_opt_out"]["value"]);
+                               $result["entry_list"][0]["name_value_list"]["invalid_email"]["value"],$result["entry_list"][0]["name_value_list"]["email_opt_out"]["value"]);
           return $resultArray;
      }
 

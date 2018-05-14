@@ -1,1 +1,4 @@
 Erros de validação
+
+Transformar o href remover em botão;
+Alterar o nome das vistas para portugues;

@@ -26,21 +26,53 @@ class clientController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function index(ClientService $service)
+    public function Index(ClientService $service)
     {
         
         $clientId = Auth::user()->idCrm;
-        $result = $service->getSuiteCrmData($clientId);
+        $result = $service->GetSuiteCrmData($clientId);
 
        
         return view('clientHome')->with('result',$result);
     }
 
-    public function exclusao(ClientService $service){
+    public function Exclusao(ClientService $service){
 
         $clientId = Auth::user()->idCrm;
-        $result = $service->pedirExclusao($clientId); 
+        $result = $service->PedirExclusao($clientId); 
         return redirect('clientHome');
+    }
+    public function Remocao(ClientService $service){
+
+        $clientId = Auth::user()->idCrm;
+        $result = $service->PedirRemocao($clientId); 
+        return redirect('clientHome');
+    }
+
+    public function AlterarDados(Request $request,ClientService $service){
+        //validações
+        $validatedData = $request->validate([
+            'email' => 'required',
+            'nome' => 'required',
+        ]);
+        
+        $data=array();
+        $aux;
+        array_push($data,$request->nome,$request->apelido,$request->email,$request->telemovel,$request->telemovelDeTrabalho,$request->morada);
+        
+        for($i = 0;$i<= count($data)-1;$i++){
+
+            $aux = strcmp($data[$i],NULL);
+            if($aux == 0){
+              $data[$i] = '';
+            }
+        }
+        var_dump($data);
+
+        $clientId = Auth::user()->idCrm;
+        $result = $service->AlterarDados($clientId,$data); 
+        return redirect('clientHome');
+        
     }
 
 
