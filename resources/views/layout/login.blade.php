@@ -1,5 +1,5 @@
 
-<div class="container pt-5">
+<div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2" style="margin: 0 auto">
             <div class="panel panel-default">
