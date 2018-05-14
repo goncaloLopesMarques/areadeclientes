@@ -53,11 +53,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     Login
                                 </button>
-
-                                {{-- <button onclick="login();" class="btn btn-primary">
-                                    Testar
-                                </button> --}}
-
+                                
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Forgot Your Password?
                                 </a>

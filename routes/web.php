@@ -14,6 +14,11 @@
 
 
 
+Route::get('/teste', function () {
+    return view('pages.token');
+});
+
+
 Route::get('/crm', function () {
     return view('pages.suitecrm');
 });
@@ -32,4 +37,4 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/clientHome', 'clientController@index')->name('clientHome');
-
+Route::get('/clientHome/exclusao', 'clientController@exclusao')->name('clienteExclusao');

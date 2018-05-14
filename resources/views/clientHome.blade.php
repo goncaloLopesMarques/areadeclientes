@@ -7,6 +7,9 @@
 
             <!--Section: Cards-->
                 <!--Grid row-->
+                <div>
+                <button class="btn btn-danger" disabled="disabled" id="pediuExclusao" > Este contacto pediu exclusão</button>
+                </div>
                 <div class="row wow fadeIn">
                     <form id="dados-do-cliente">
                         <p class="h4 text-center mb-4">Os seus dados guardados no nosso Crm</p>
@@ -46,7 +49,7 @@
                         <div class="text-center mt-4">
                             <button class="btn btn-mdb-color waves-effect waves-light" type="submit">Alterar<i class="fa fa-paper-plane-o ml-2"></i></button>
                             <button class="btn btn-mdb-color waves-effect waves-light" type="submit">Remover<i class="fa fa-paper-plane-o ml-2"></i></button>
-                            <button class="btn btn-mdb-color waves-effect waves-light" onclick="pedirExclusao();" >Pedir Exclusão<i class="fa fa-paper-plane-o ml-2"></i></button>
+                            <a href="{{action('clientController@exclusao')}}"style="color: #cc0000">Quero ser excluido!</a>
                         </div>
                     </form>
                     <!-- Default form contact -->
@@ -57,25 +60,24 @@
                 <hr class="mb-5">
         </div>
     </main>
+    <script>
+     
+    </script>
 </body>
 @endsection
 <script>
-/*
-function pedirExclusao(){
-    event.preventDefault();
-    {{clientController::pedirExclusao()}}
-}
-*/
 
-  window.onload = function() {
-       //obter os inputs
-       var inputArray = new Array();
+ function fillInputs() {
+        //obter os inputs
+        var pediuExclusao = document.getElementById("pediuExclusao");
+        var inputArray = new Array();
         inputArray.push(document.getElementById("nome"));
         inputArray.push(document.getElementById("apelido"));
         inputArray.push(document.getElementById("telemovel"));
         inputArray.push(document.getElementById("telemovelDeTrabalho"));
         inputArray.push(document.getElementById("email"));
         inputArray.push(document.getElementById("morada"));
+        
       
 
 
@@ -84,16 +86,22 @@ function pedirExclusao(){
     <?php foreach($result as $key => $val){ ?>
         dataArray.push('<?php echo $val; ?>');
     <?php } ?>
-   
+        //Variavel que tem o optin--- 0 se esta optin, 1 se está optOut
+        var optIn = dataArray[dataArray-1];
      //preenche os inputs com as variaveis
      for (var i = 0, len = inputArray.length; i < len; i++) {
      
       inputArray[i].value = dataArray[i];
-    
     }
+    console.log(dataArray[dataArray.length -1])
+    if(dataArray[dataArray.length -1] == 0){
+        console.log("Ola")
+        pediuExclusao.style.visibility = "hidden";
+     }
    }
-   
+   window.onload = fillInputs;
 </script>
+
 
 
 
