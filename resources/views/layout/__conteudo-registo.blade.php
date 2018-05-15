@@ -17,7 +17,7 @@
         console.log(emailCrm)
     }
 </script>
-    <main class="mt-5 pt-5">
+<main class="mt-5 pt-5">
     <body onload="fillHiddenInputs();">
         <div class="container">
             <form onsubmit="register()" id="registerForm">

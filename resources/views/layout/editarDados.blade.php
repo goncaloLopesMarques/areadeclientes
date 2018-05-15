@@ -1,5 +1,6 @@
 <?php use App\Http\Controllers\clientController;?>
 
+<main class="mt-5 pt-5">
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2" style="margin: 0 auto">
@@ -89,6 +90,7 @@
         </div>
     </div>
 </div>
+</main>
 
 <script>
 
