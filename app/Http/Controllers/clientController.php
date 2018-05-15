@@ -47,7 +47,9 @@ class clientController extends Controller
     public function Remocao(ClientService $service){
 
         $clientId = Auth::user()->idCrm;
-        $result = $service->PedirRemocao($clientId); 
+        $clientEmail = Auth::user()->email;
+        $id = Auth::user()->id;
+        $result = $service->PedirRemocao($clientId,$clientEmail,$id); 
         return redirect('clientHome');
     }
 
