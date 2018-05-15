@@ -80,8 +80,8 @@
 
 
 
-                        <input type="hidden" name ="idCrm" id="idCrm" value="123">
-                        <input type="hidden" name ="emailCrm" id="emailCrm" value="123@123.com" >
+                        <input type="hidden" name ="idCrm" id="idCrm">
+                        <input type="hidden" name ="emailCrm" id="emailCrm">
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">

@@ -112,9 +112,14 @@ class clientService {
       private function Login(){
         global $sessId;
              
-           $userAuth = array(
-             'user_name' => 'user',
-             'password' => md5('user DigitalInput1'),
+          //  $userAuth = array(
+          //    'user_name' => 'user',
+          //    'password' => md5('user DigitalInput1'),
+          // );
+
+          $userAuth = array(
+             'user_name' => 'miguelApi',
+             'password' => md5('hmcVye'),
           );
          
           $appName = 'Client Area SuiteCrm';
@@ -138,6 +143,9 @@ class clientService {
         global $sessId;
       
         $sessId = (new self)->Login();
+
+
+        var_dump( $sessId);
 
         $entryArgs = array(
             //Session id - retrieved from login call

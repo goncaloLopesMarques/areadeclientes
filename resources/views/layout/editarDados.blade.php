@@ -6,7 +6,7 @@
             <div class="panel panel-default">
 
 
-            <h3 class="my-3 h3 text-center">Os seus dados</h3>
+            <h3 class="my-3 h3 text-center">XXX Os seus dados</h3>
             
             <div class="panel-body">
                 <div id ="excluidoError">
@@ -93,6 +93,10 @@
 <script>
 
  function fillInputs() {
+
+
+        console.log("EXECUTEI  editar dados");
+
         //obter os inputs
         var pediuExclusao = document.getElementById("pediuExclusao");
         var inputArray = new Array();
