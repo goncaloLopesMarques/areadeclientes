@@ -386,6 +386,7 @@ class ComposerStaticInitd1c1b70289b6c05c20af20fbbc887424
     );
 
     public static $classMap = array (
+        'App\\Black_List' => __DIR__ . '/../..' . '/app/Black_List.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -395,7 +396,6 @@ class ComposerStaticInitd1c1b70289b6c05c20af20fbbc887424
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\RegistersController' => __DIR__ . '/../..' . '/app/Http/Controllers/RegistersController.php',
-        'App\\Http\\Controllers\\SuiteCrm' => __DIR__ . '/../..' . '/app/Http/Controllers/SuiteCrmController.php',
         'App\\Http\\Controllers\\UserRegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserRegisterController.php',
         'App\\Http\\Controllers\\clientController' => __DIR__ . '/../..' . '/app/Http/Controllers/clientController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',

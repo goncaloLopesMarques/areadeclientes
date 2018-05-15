@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Black_List' => $baseDir . '/app/Black_List.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -15,7 +16,6 @@ return array(
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\RegistersController' => $baseDir . '/app/Http/Controllers/RegistersController.php',
-    'App\\Http\\Controllers\\SuiteCrm' => $baseDir . '/app/Http/Controllers/SuiteCrmController.php',
     'App\\Http\\Controllers\\UserRegisterController' => $baseDir . '/app/Http/Controllers/UserRegisterController.php',
     'App\\Http\\Controllers\\clientController' => $baseDir . '/app/Http/Controllers/clientController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',

@@ -3,6 +3,8 @@
 namespace App\Services;
 use Illuminate\Http\Request;
 use Auth;
+use App\Http\Controllers\Controller;
+use App\Black_List;
 
 $sessId="";
 
@@ -78,7 +80,7 @@ class clientService {
           $result =(new self)->SuiteCrmRequester('set_entry',$entryArgs);
           (new self)->SuiteCrmRequester('logout',$sessId);
       }
-      public static function PedirRemocao($clientId){
+      public static function PedirRemocao($clientId,$clientEmail,$id){
         $sessId = (new self)->Login();
 
          $entryArgs = array(
@@ -97,7 +99,13 @@ class clientService {
                    'deleted' => 0,
           );
         
-          $result =(new self)->SuiteCrmRequester('set_entry',$entryArgs);
+          
+          if($result =(new self)->SuiteCrmRequester('set_entry',$entryArgs)){
+            $black_list = new Black_List;
+            $black_list->idUser = $id;
+            $black_list->email = $clientEmail;
+            $black_list->save();
+          }
           (new self)->SuiteCrmRequester('logout',$sessId);
       }
 
@@ -149,7 +157,7 @@ class clientService {
             );
             $result = (new self)->SuiteCrmRequester('get_entry',$entryArgs);
             (new self)->SuiteCrmRequester('logout',$sessId);
-             var_dump($result);
+             //var_dump($result);
             /*
            var_dump($result["entry_list"][0]["name_value_list"]["first_name"]["value"]);
            var_dump($result["entry_list"][0]["name_value_list"]["last_name"]["value"]);

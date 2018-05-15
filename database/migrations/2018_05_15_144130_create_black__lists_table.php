@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBlackListTable extends Migration
+class CreateBlackListsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateBlackListTable extends Migration
      */
     public function up()
     {
-        Schema::create('black_list', function (Blueprint $table) {
+        Schema::create('black__lists', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('idUser');
-            $table->string('email')->unique();;
+            $table->string('email');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateBlackListTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('black_list');
+        Schema::dropIfExists('black__lists');
     }
 }
