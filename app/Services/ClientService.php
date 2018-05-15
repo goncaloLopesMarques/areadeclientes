@@ -149,7 +149,7 @@ class clientService {
             );
             $result = (new self)->SuiteCrmRequester('get_entry',$entryArgs);
             (new self)->SuiteCrmRequester('logout',$sessId);
-             var_dump($result);
+             //var_dump($result);
             /*
            var_dump($result["entry_list"][0]["name_value_list"]["first_name"]["value"]);
            var_dump($result["entry_list"][0]["name_value_list"]["last_name"]["value"]);
