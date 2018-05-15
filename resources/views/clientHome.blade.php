@@ -1,7 +1,12 @@
+
 @extends('layouts.app')
 @section('content')
 <?php use App\Http\Controllers\clientController;?>
 <body>
+
+<!-- REMOVER ESTE FICHEIRO (foi substituido) -->
+
+
     <main class="mt-5 pt-5">
         <div class="container">
 
@@ -10,16 +15,20 @@
                 <div id = "excluidoError">
                 
                 </div>
+
                 <div class="row wow fadeIn">
-                @if ($errors->any())
-                 <div class="alert alert-danger">
-                  <ul>
-                   @foreach ($errors->all() as $error)
-                  <li>{{ $error }}</li>
-                  @endforeach
-                 </ul>
-                 </div>
-                @endif
+                
+                    @if ($errors->any())
+                     
+                     <div class="alert alert-danger">
+                      <ul>
+                       @foreach ($errors->all() as $error)
+                      <li>{{ $error }}</li>
+                      @endforeach
+                     </ul>
+                     </div>
+
+                    @endif
 
                     <form id="dados-do-cliente" action="{{ url('/clientHome/AlterarDados') }}" method="post">
                     {{ csrf_field() }}
@@ -47,7 +56,7 @@
                         
                         <!-- Default textarea message -->
                         <label for="telemovelDeTrabalho" class="grey-text">Telemóvel de Trabalho</label>
-                        <input type="text" id="telemovelDeTrabalho" class="form-control" name ="telemovelDeTrabalho"></input>
+                        <input type="text" id="telemovelDeTrabalho" class="form-control" name ="telemovelDeTrabalho">
 
                         <br>
 
@@ -72,9 +81,7 @@
                 <hr class="mb-5">
         </div>
     </main>
-    <script>
-     
-    </script>
+
 </body>
 @endsection
 <script>

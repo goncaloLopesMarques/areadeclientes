@@ -8,6 +8,7 @@
                 <h3 class="my-3 h3 text-center">Login</h3>
 
                 <div class="panel-body">
+                    
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
@@ -55,11 +56,12 @@
                                 </button>
                                 
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
+                                    Esqueceu a sua Password?
                                 </a>
                             </div>
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>

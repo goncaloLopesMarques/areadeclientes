@@ -33,7 +33,9 @@ class clientController extends Controller
         $result = $service->GetSuiteCrmData($clientId);
 
        
-        return view('clientHome')->with('result',$result);
+        // return view('clientHome')->with('result',$result);
+        return view('pages.index')->with('result',$result);
+
     }
 
     public function Exclusao(ClientService $service){

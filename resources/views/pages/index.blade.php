@@ -27,7 +27,7 @@
 
 @section('main')
 
-    @include('layout.main')
+    @include('layout.index')
     
 @endsection
 
