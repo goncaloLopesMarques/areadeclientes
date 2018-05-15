@@ -2,10 +2,6 @@
 
 
 
-
-
-
-
 @section('head')
 
     @include('layout.head')
@@ -13,12 +9,12 @@
 @endsection
 
 
+
 @section('nav-bar')
 
     @include('layout.nav-bar')
     
 @endsection
-
 
 
 

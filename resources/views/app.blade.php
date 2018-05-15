@@ -8,7 +8,7 @@
     </head>
 
     <body>
-            <div class="wrapper">
+           
 
                 <!--Main Navigation-->
                 <header>
@@ -24,9 +24,9 @@
                 <!-- </main> -->
 
 
-                <div class="push"></div>
+          
 
-            </div>
+
 
             <!-- <footer class="page-footer text-center font-small mdb-color darken-2 mt-4 wow fadeIn"> -->
             @yield('footer')
@@ -46,17 +46,13 @@
 <style>
 
 html, body {
-    height: 100%;
-}
 
-.wrapper {
-    min-height: 100%;
-    height: 100%;
-    margin: 0 auto -99px; /* the bottom margin is the negative value of the footer's height */
-}
+.page-footer{
 
-.footer, .push {
-    height: 99px; /* .push must be the same height as .footer */
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
 }
 
 </style>

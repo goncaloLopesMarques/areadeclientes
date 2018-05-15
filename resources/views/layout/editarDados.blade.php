@@ -9,7 +9,7 @@
             <h3 class="my-3 h3 text-center">Os seus dados</h3>
             
             <div class="panel-body">
-                <div id = "excluidoError">
+                <div id ="excluidoError">
                 
                 </div>
 
@@ -73,12 +73,12 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
+                            <div class="col-md-12">
                                 <button class="btn btn-mdb-color waves-effect waves-light" type="submit">Alterar<i class="fa fa-paper-plane-o ml-2"></i></button>
                                 
-                                <a href="{{action('clientController@Remocao')}}"style="color: #cc0000">Remover-me!</a>
+                                <a class="btn btn-link" href="{{action('clientController@Remocao')}}" style="color: #cc0000">Remover-me!</a>
                                 
-                                <a href="{{action('clientController@Exclusao')}}"style="color: #cc0000">Quero ser excluido!</a>
+                                <a class="btn btn-link" href="{{action('clientController@Exclusao')}}"style="color: #cc0000">Quero ser excluido!</a>
                    
                             </div>
                         </div>
