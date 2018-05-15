@@ -12,16 +12,26 @@
 */
 
 
+// Route::get('/', function () {
+//     return view('pages.home');
+// });
 
 
-Route::get('/teste', function () {
-    return view('pages.token');
+Route::get('/login', function () {
+    return view('auth.login');
 });
 
 
 Route::get('/crm', function () {
     return view('pages.suitecrm');
 });
+
+// Route::get('/home', function () {
+//     return view('pages.home');
+// });
+
+
+
 
 
 
@@ -35,8 +45,16 @@ Route::post('/registration','RegistersController@registration');
 
 Auth::routes();
 
-Route::get('/', 'HomeController@Index')->name('home');
+/*Route::get('/', 'HomeController@Index')->name('home');*/
+
+Route::get('/', function () {
+    return view('pages.home');
+});
+
 Route::get('/clientHome', 'clientController@Index')->name('clientHome');
+
 Route::get('/clientHome/Exclusao', 'clientController@Exclusao')->name('clienteExclusao');
+
 Route::get('/clientHome/Remocao', 'clientController@Remocao')->name('clienteRemocao');
+
 Route::post('/clientHome/AlterarDados', 'clientController@AlterarDados')->name('clienteAlterarDados');

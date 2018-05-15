@@ -14,7 +14,7 @@
                     <!-- Left -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link waves-effect" href="#">Início
+                            <a class="nav-link waves-effect" href="{{ url('/') }}">Início
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>

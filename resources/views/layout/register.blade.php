@@ -78,15 +78,13 @@
                         </div>
 
 
-
-
                         <input type="hidden" name ="idCrm" id="idCrm">
                         <input type="hidden" name ="emailCrm" id="emailCrm">
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-mdb-color waves-effect waves-light">
-                                   Registrar
+                                   Registar
                                 </button>
                             </div>
                         </div>
