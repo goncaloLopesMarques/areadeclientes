@@ -34,7 +34,7 @@ class clientController extends Controller
 
        
         // return view('clientHome')->with('result',$result);
-        return view('pages.index')->with('result',$result);
+        return view('pages.editarDados')->with('result',$result);
 
     }
 

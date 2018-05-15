@@ -27,7 +27,7 @@
 
 @section('main')
 
-    @include('layout.index')
+    @include('layout.editarDados')
     
 @endsection
 
