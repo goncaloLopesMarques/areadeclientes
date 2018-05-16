@@ -387,8 +387,10 @@ class ComposerStaticInitd1c1b70289b6c05c20af20fbbc887424
 
     public static $classMap = array (
         'App\\Black_List' => __DIR__ . '/../..' . '/app/Black_List.php',
+        'App\\Change_List' => __DIR__ . '/../..' . '/app/Change_List.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Exclusion_List' => __DIR__ . '/../..' . '/app/Exclusion_List.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
