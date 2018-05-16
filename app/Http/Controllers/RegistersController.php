@@ -9,7 +9,7 @@ class RegistersController extends Controller
 {
    public function registration(Request $request){
      $this->validate($request,[
-        'name' => 'required|unique:users',
+        'username' => 'required|unique:users',
         'password' => 'required|confirmed|min:6',
         'emailCrm' => 'required',
         'idCrm' => 'required',
@@ -17,7 +17,7 @@ class RegistersController extends Controller
      ]);
 
      $user = new User;
-     $user->name = $request->input('name');
+     $user->username = $request->input('username');
      $user->email = $request->input('emailCrm');
      $user->idCrm = $request->input('idCrm');
      $user->password = bcrypt($request->input('password'));

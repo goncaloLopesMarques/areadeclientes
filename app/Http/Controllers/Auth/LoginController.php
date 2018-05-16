@@ -35,6 +35,11 @@ class LoginController extends Controller
     {
      return redirect('/clientHome');
     }
+
+    public function username()
+    {
+     return 'username';
+    }
     //protected $redirectTo ='clientHome'; /*'/home';*/
 
     /**
