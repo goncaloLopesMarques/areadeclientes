@@ -46,11 +46,12 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="email" class="grey-text">Email</label> &nbsp;<i id="questionToolTip" class="fa fa-question-circle fa-lg" aria-hidden="true"></i> 
+                            <label for="email" class="grey-text">Email</label> &nbsp;<i type="button" class="fa fa-question-circle fa-lg" data-toggle="tooltip" data-placement="right" title="Se pretender alterar o email terá de proceder ao pedido via email."></i> 
                             <div class="col-md-12">
                                 <input type="email" id="email" class="form-control" name="email" disabled>
                             </div>
                         </div>
+
 
                         <div class="form-group">
                             <label for="telemovel" class="grey-text">Telemóvel</label>
@@ -75,9 +76,14 @@
 
                         <div class="form-group">
                             <div class="col-md-12">
-                                <button class="btn btn-mdb-color waves-effect waves-light" type="submit">Alterar<i class="fa fa-paper-plane-o ml-2"></i></button>
-                                <a class="btn btn-link"  style="color: #cc0000"data-toggle="modal"data-target="#remocaoModal">Remover-me!</a>
-                                <a class="btn btn-link"  style="color: #cc0000"data-toggle="modal"data-target="#exclusaoModal">Quero ser excluido!</a>
+
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <button class="btn btn-secondary waves-effect waves-light" type="submit">Alterar<i class="fa fa-paper-plane-o ml-2"></i></button>
+                                     <a class="btn btn-link"  style="color: #cc0000"data-toggle="modal"data-target="#remocaoModal">Remover-me!</a>
+                                     <a class="btn btn-link"  style="color: #cc0000"data-toggle="modal"data-target="#exclusaoModal">Quero ser excluido!</a>
+                                </div>
+                            
+
                             </div>
                         </div>
                     </form>
@@ -105,7 +111,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-                <a class="btn btn-link" href="{{action('clientController@Exclusao')}}"style="color: #cc0000">Continuar</button>
+                <a class="btn btn-link" href="{{action('clientController@Exclusao')}}" style="color: #cc0000">Continuar</a>
             </div>
         </div>
     </div>
@@ -125,7 +131,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-                <a class="btn btn-link" href="{{action('clientController@Remocao')}}" style="color: #cc0000">Continuar</button>
+                <a class="btn btn-link" href="{{action('clientController@Remocao')}}" style="color: #cc0000">Continuar</a>
             </div>
         </div>
     </div>

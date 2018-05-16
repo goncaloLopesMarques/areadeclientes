@@ -11,5 +11,18 @@
     <script type="text/javascript">
         // Animations initialization
         new WOW().init();
+
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
         
     </script>
+
+
+
+
+
+
+
+
+
