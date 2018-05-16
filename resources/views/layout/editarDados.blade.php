@@ -84,11 +84,8 @@
 
                                 <div class="btn-group" role="group" aria-label="Basic example">
 
-                                    
-                                    <span data-toggle="tooltip" data-placement="bottom" title="Alterar os seus dados">
-                                        <a class="btn btn-link" style="color: #cc0000"data-toggle="modal"data-target="#alteraoModal">Alterar&nbsp;<i type="button" class="fa fa-question-circle-o fa-lg"></i></a>
-                                    </span>
-
+                                    <button class="btn btn-primary waves-effect waves-light" type="submit">Alterar<i class="fa fa-paper-plane-o ml-2"></i></button>
+                                     
                                     <span data-toggle="tooltip" data-placement="bottom" title="Todos os seus dados serão eliminados e deixará de receber as nossas comunicações!">
                                         <a class="btn btn-link" style="color: #cc0000"data-toggle="modal"data-target="#remocaoModal">Remover-me&nbsp;<i type="button" class="fa fa-question-circle-o fa-lg"></i></a>
                                     </span>
@@ -123,7 +120,7 @@
                 <p> Ao pedir exclusão não voltará a ser contactado por nós, tem a certeza que pretende continuar?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Voltar</button>
                 <a class="btn btn-link" href="{{action('clientController@Exclusao')}}" style="color: #cc0000">Continuar</a>
             </div>
         </div>
@@ -143,7 +140,7 @@
                 <p>Ao pedir remoção toda a informação que temos sobre si será apagada, tem a certeza que pretende continuar?</p> 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Voltar</button>
                 <a class="btn btn-link" href="{{action('clientController@Remocao')}}" style="color: #cc0000">Continuar</a>
             </div>
         </div>

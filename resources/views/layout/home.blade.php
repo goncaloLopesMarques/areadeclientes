@@ -25,17 +25,18 @@
             <section class="pt-5">
 
                 <!-- Heading & Description -->
-                <div class="wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+                <div class="wow fadeIn my-5" style="visibility: visible; animation-name: fadeIn;">
                     <!--Section heading-->
                     <h2 class="h1 text-center mb-5">O que é a nossa Área de cliente?</h2>
                     <!--Section description-->
-                    <p class="text-center">O RGPD(Regulamentação Geral para Protecção de Dados Pessoais) trouxe várias variaveis novas no que diz respeito
-                    aos direitos dos utilizadores. Entre eles destacamos <strong>Consulta</strong>, <strong>Edição</strong>, <strong>Exclusão</strong> e <strong>Remoção</strong> dos dados.
+                    <p class="text-center">O RGPD (Regulamentação Geral para Protecção de Dados Pessoais) trouxe várias variaveis novas no que diz respeito
+                    aos direitos dos utilizadores. Entre eles destacamos <strong>Consulta</strong>, <strong>Edição</strong>, <strong>Exclusão</strong> e <strong>Remoção</strong> dos dados.<hr>
                     A nossa Área de cliente permite aos utilizadores exercerem todos os seus direitos. Queremos que os nossos clientes tenham controlo total sobre os seus dados e que saibam
                     o que fazemos com eles, permitimos tambem que posos pedir para ser excluido ou removido sem burocracias.</p>
                 </div>
                 <!-- Heading & Description -->
                 <hr class="mb-5">
+
             </section>
             <!--Section: Cards-->
 
