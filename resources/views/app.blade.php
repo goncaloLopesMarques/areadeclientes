@@ -18,9 +18,9 @@
                 </header>
 
                 <!-- <main class="mt-5 pt-5"> -->
-                <div class="pt-5" style="margin-top:65px;">
+                {{-- <div class="pt-5" style="margin-top:65px;"> --}}
                     @yield('main')
-                </div>
+                {{-- </div> --}}
                 <!-- </main> -->
 
 

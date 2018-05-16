@@ -1,5 +1,5 @@
 
-
+<main class="mt-5 pt-5">
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2" style="margin: 0 auto">
@@ -78,15 +78,13 @@
                         </div>
 
 
-
-
                         <input type="hidden" name ="idCrm" id="idCrm">
                         <input type="hidden" name ="emailCrm" id="emailCrm">
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-mdb-color waves-effect waves-light">
-                                   Registrar
+                                   Registar
                                 </button>
                             </div>
                         </div>
@@ -96,3 +94,4 @@
         </div>
     </div>
 </div>
+</main>
