@@ -13,25 +13,32 @@
 
                     <!-- Left -->
                     <ul class="navbar-nav mr-auto">
+                       
                         <li class="nav-item active">
                             <a class="nav-link waves-effect" href="{{ url('/') }}">Início
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link waves-effect" href="https://www.digitalinput.pt/" target="_blank">DigitalInput</a>
                         </li>
 
+                         <li class="nav-item active">
+                            <a class="nav-link waves-effect" href="{{ url('/contactos') }}">Informações
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
 
                     </ul>
 
                     <!-- Right -->
                     <ul class="navbar-nav nav-flex-icons">
-                        <li class="nav-item">
+ {{--                        <li class="nav-item">
                             <a href="https://www.facebook.com/digitalinputwebmarketing/" class="nav-link waves-effect" target="_blank">
                                 <i class="fa fa-facebook"></i>
                             </a>
-                        </li>
+                        </li> --}}
 
                          @guest
 

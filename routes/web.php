@@ -26,6 +26,10 @@ Route::get('/crm', function () {
     return view('pages.suitecrm');
 });
 
+Route::get('/contactos', function () {
+    return view('pages.contactos');
+});
+
 // Route::get('/home', function () {
 //     return view('pages.home');
 // });
