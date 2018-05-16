@@ -46,7 +46,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="email" class="grey-text">Email</label> &nbsp;<i type="button" class="fa fa-question-circle fa-lg" data-toggle="tooltip" data-placement="right" title="Se pretender alterar o email terá de proceder ao pedido via email."></i> 
+                            <label for="email" class="grey-text">Email</label> &nbsp;<i type="button" class="fa fa-question-circle-o fa-lg" data-toggle="tooltip" data-placement="right" title="Se pretender alterar o email terá de proceder ao pedido via email."></i> 
                             <div class="col-md-12">
                                 <input type="email" id="email" class="form-control" name="email" disabled>
                             </div>
@@ -78,9 +78,17 @@
                             <div class="col-md-12">
 
                                 <div class="btn-group" role="group" aria-label="Basic example">
+
                                     <button class="btn btn-secondary waves-effect waves-light" type="submit">Alterar<i class="fa fa-paper-plane-o ml-2"></i></button>
-                                     <a class="btn btn-link"  style="color: #cc0000"data-toggle="modal"data-target="#remocaoModal">Remover-me!</a>
-                                     <a class="btn btn-link"  style="color: #cc0000"data-toggle="modal"data-target="#exclusaoModal">Quero ser excluido!</a>
+                                     
+                                    <span data-toggle="tooltip" data-placement="bottom" title="Todos os seus dados serão eliminados e deixará de receber as nossas comunicações!">
+                                        <a class="btn btn-link" style="color: #cc0000"data-toggle="modal"data-target="#remocaoModal">Remover-me&nbsp;<i type="button" class="fa fa-question-circle-o fa-lg"></i></a>
+                                    </span>
+
+                                    <span data-toggle="tooltip" data-placement="bottom" title="Deixará de receber as nossas comunicações!">
+                                    <a class="btn btn-link"  style="color: #cc0000"data-toggle="modal"data-target="#exclusaoModal">Quero ser excluido&nbsp;<i type="button" class="fa fa-question-circle-o fa-lg"></i></a>
+                                    </span>
+
                                 </div>
                             
 
