@@ -76,20 +76,56 @@
                         <div class="form-group">
                             <div class="col-md-12">
                                 <button class="btn btn-mdb-color waves-effect waves-light" type="submit">Alterar<i class="fa fa-paper-plane-o ml-2"></i></button>
-                                
-                                <a class="btn btn-link" href="{{action('clientController@Remocao')}}" style="color: #cc0000">Remover-me!</a>
-                                
-                                <a class="btn btn-link" href="{{action('clientController@Exclusao')}}"style="color: #cc0000">Quero ser excluido!</a>
-                   
+                                <a class="btn btn-link"  style="color: #cc0000"data-toggle="modal"data-target="#remocaoModal">Remover-me!</a>
+                                <a class="btn btn-link"  style="color: #cc0000"data-toggle="modal"data-target="#exclusaoModal">Quero ser excluido!</a>
                             </div>
                         </div>
                     </form>
-
                 </div>
             </div>
             <!-- esta div só mostra quando o utilizador foi removido -->
             <div id ="removido" style="display:none">
               <h1>Este utilizador foi removido da nossa base de dados, não temos dados sobre si</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal da exclusão -->
+<div class="modal fade" id="exclusaoModal" tabindex="-1" role="dialog" aria-labelledby="exclusaoModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Exlusão</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Ao pedir exclusão não voltará a ser contactado por nós, tem a certeza que pretende continuar?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+                <a class="btn btn-link" href="{{action('clientController@Exclusao')}}"style="color: #cc0000">Continuar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal da Remoção -->
+<div class="modal fade" id="remocaoModal" tabindex="-1" role="dialog" aria-labelledby="remocaoModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Exlusão</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Ao pedir remoção toda a informação que temos sobre si será apagada, tem a certeza que pretende continuar?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+                <a class="btn btn-link" href="{{action('clientController@Remocao')}}" style="color: #cc0000">Continuar</button>
             </div>
         </div>
     </div>
