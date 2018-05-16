@@ -107,7 +107,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                Ao pedir exclusão não voltará a ser contactado por nós, tem a certeza que pretende continuar?
+                <p> Ao pedir exclusão não voltará a ser contactado por nós, tem a certeza que pretende continuar?</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
@@ -127,7 +127,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                Ao pedir remoção toda a informação que temos sobre si será apagada, tem a certeza que pretende continuar?
+                <p>Ao pedir remoção toda a informação que temos sobre si será apagada, tem a certeza que pretende continuar?</p> 
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
