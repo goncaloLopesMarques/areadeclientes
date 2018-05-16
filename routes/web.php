@@ -12,6 +12,8 @@
 */
 
 
+
+
 // Route::get('/', function () {
 //     return view('pages.home');
 // });
@@ -62,3 +64,12 @@ Route::get('/clientHome/Exclusao', 'clientController@Exclusao')->name('clienteEx
 Route::get('/clientHome/Remocao', 'clientController@Remocao')->name('clienteRemocao');
 
 Route::post('/clientHome/AlterarDados', 'clientController@AlterarDados')->name('clienteAlterarDados');
+
+// Route::get('/enviarEmail', function () {
+//     return view('pages.contactos');
+// });
+
+Route::post('/enviarEmail', 'SendMailController@enviarFormularioContactos');
+
+
+

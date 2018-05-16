@@ -15,8 +15,6 @@
 
 
 
-
-
                             
 <section class="section mt-5">
 
@@ -28,7 +26,9 @@
 
         <!--Grid column-->
         <div class="col-md-8 col-xl-9">
-            <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+            <form id="contact-form" name="contact-form" method="POST" action="{{ url('/enviarEmail') }}">
+
+                {{ csrf_field() }}
 
                 <!--Grid row-->
                 <div class="row">
@@ -79,6 +79,8 @@
                     </div>
                 </div>
                 <!--Grid row-->
+
+                <input class="btn btn-primary" type="submit" value="send">
 
             </form>
 

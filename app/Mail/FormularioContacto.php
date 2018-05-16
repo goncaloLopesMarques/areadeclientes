@@ -7,18 +7,23 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
+use Illuminate\Http\Request;
+
+
 class FormularioContacto extends Mailable
 {
     use Queueable, SerializesModels;
+
+    public $dadosFormulario;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Request $request)
     {
-        //
+        $this->dadosFormulario  = $request;
     }
 
     /**
@@ -28,11 +33,7 @@ class FormularioContacto extends Mailable
      */
     public function build()
     {
-
-
         return $this->from('noreply@digitalinput.pt')
-                    ->view('mail.formularioContactos');
-
-        // return $this->view('view.name');
+                    ->markdown('mail.formularioContactos');
     }
 }

@@ -62,11 +62,8 @@
 
                             <div class="col-md-12">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-
-                            
+                            </div>                            
                         </div>
-
 
                         <div class="form-group">
                             <div class="col-md-12">
@@ -76,7 +73,6 @@
                                 </div>
                             </div>
                         </div>
-
 
                         <input type="hidden" name ="idCrm" id="idCrm">
                         <input type="hidden" name ="emailCrm" id="emailCrm">
