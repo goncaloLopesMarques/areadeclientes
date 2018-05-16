@@ -2,6 +2,8 @@
 
     --main-color: #1c2a48;
 
+    /*    var(--main-color)    */
+
     --blue: #007bff;
     --indigo: #6610f2;
     --purple: #6f42c1;
@@ -11031,7 +11033,7 @@ a.text-dark:hover {
 a {
     cursor: pointer;
     text-decoration: none;
-    color: #007bff;
+    color: var(--main-color);
     -webkit-transition: all .2s ease-in-out;
     -o-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out
@@ -15180,7 +15182,7 @@ a.waves-light {
 }
 
 .btn-primary {
-    background-color: #4285f4!important;
+    background-color: var(--main-color) !important;
     color: #fff!important
 }
 
