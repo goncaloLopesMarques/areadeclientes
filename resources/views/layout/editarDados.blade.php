@@ -48,7 +48,8 @@
                         <div class="form-group">
                             <label for="email" class="grey-text">Email</label> &nbsp;<i type="button" class="fa fa-question-circle-o fa-lg" data-toggle="tooltip" data-placement="right" title="Se pretender alterar o email terá de proceder ao pedido via email."></i> 
                             <div class="col-md-12">
-                                <input type="email" id="email" class="form-control" name="email" disabled>
+                                <input type="email" id="emailShow" class="form-control" name="emailShow" disabled>
+                                <input type="hidden" name ="email" id="email">
                             </div>
                         </div>
 
@@ -90,8 +91,6 @@
                                     </span>
 
                                 </div>
-                            
-
                             </div>
                         </div>
                     </form>
@@ -153,11 +152,13 @@
         var divAutenticado = document.getElementById("editarDados");
         var divRemovido = document.getElementById("removido");
         var inputArray = new Array();
+        var emailShow = document.getElementById("email");
+
         inputArray.push(document.getElementById("nome"));
         inputArray.push(document.getElementById("apelido"));
         inputArray.push(document.getElementById("telemovel"));
         inputArray.push(document.getElementById("telemovelDeTrabalho"));
-        inputArray.push(document.getElementById("email"));
+        inputArray.push(document.getElementById("emailShow"));
         inputArray.push(document.getElementById("morada"));          
 
        // vai buscar a info do array php para um array javascript
@@ -168,6 +169,7 @@
         //Variavel que tem o optin--- 0 se esta optin, 1 se está optOut
         var optIn = dataArray[dataArray-1];
      //preenche os inputs com as variaveis
+     emailShow.value = dataArray[4];
      for (var i = 0, len = inputArray.length; i < len; i++) {
       inputArray[i].value = dataArray[i];
      }
