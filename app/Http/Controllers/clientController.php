@@ -75,7 +75,7 @@ class clientController extends Controller
 
         $clientId = Auth::user()->idCrm;
         $result = $service->AlterarDados($clientId,$data); 
-        return redirect('clientHome');
+        return redirect()->back()->with('message', 'Os seus dados foram alterados com sucesso!');
         
     }
 

@@ -13,7 +13,11 @@
                 <div id ="excluidoError">
                 
                 </div>
-
+                  @if(session()->has('message'))
+                    <div class="alert alert-success" data-dismiss="alert" aria-label="close">
+                     {{ session()->get('message') }}
+                    </div>
+                  @endif
                 
                 @if ($errors->any())
                      
@@ -80,8 +84,11 @@
 
                                 <div class="btn-group" role="group" aria-label="Basic example">
 
-                                    <button class="btn btn-secondary waves-effect waves-light" type="submit">Alterar<i class="fa fa-paper-plane-o ml-2"></i></button>
-                                     
+                                    
+                                    <span data-toggle="tooltip" data-placement="bottom" title="Alterar os seus dados">
+                                        <a class="btn btn-link" style="color: #cc0000"data-toggle="modal"data-target="#alteraoModal">Alterar&nbsp;<i type="button" class="fa fa-question-circle-o fa-lg"></i></a>
+                                    </span>
+
                                     <span data-toggle="tooltip" data-placement="bottom" title="Todos os seus dados serão eliminados e deixará de receber as nossas comunicações!">
                                         <a class="btn btn-link" style="color: #cc0000"data-toggle="modal"data-target="#remocaoModal">Remover-me&nbsp;<i type="button" class="fa fa-question-circle-o fa-lg"></i></a>
                                     </span>
@@ -93,7 +100,6 @@
                                 </div>
                             </div>
                         </div>
-                    </form>
                 </div>
             </div>
             <!-- esta div só mostra quando o utilizador foi removido -->
@@ -143,6 +149,27 @@
         </div>
     </div>
 </div>
+<!-- Modal da Alteração -->
+<div class="modal fade" id="alteraoModal" tabindex="-1" role="dialog" aria-labelledby="alteracaoModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Exlusão</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Tem a certeza que pretende alterar os seus dados?</p> 
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+                <button class="btn btn-link" type="submit" style="color: #cc0000">Continuar</button>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
 </main>
 
 <script>

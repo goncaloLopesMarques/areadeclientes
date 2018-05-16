@@ -144,9 +144,6 @@ class clientService {
       
         $sessId = (new self)->Login();
 
-
-        var_dump( $sessId);
-
         $entryArgs = array(
             //Session id - retrieved from login call
                'session' => $sessId,
