@@ -1,4 +1,3 @@
-Erros de validação
 
-Transformar o href remover em botão;
-Alterar o nome das vistas para portugues;
+dentro da area de cliente poder alterar a password;
+load spinner;

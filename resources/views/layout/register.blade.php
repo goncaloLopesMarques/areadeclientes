@@ -1,4 +1,4 @@
-
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <main class="mt-5 pt-5">
 <div class="container">
     <div class="row">
@@ -17,14 +17,14 @@
                         @if(count($errors)>0)
 
                             @foreach($errors->all() as $error)
-                                <div class="alert alert-danger">{{$error}}</div>
+                                <div class="alert alert-danger data-dismiss="alert" aria-label="close"">{{$error}}</div>
                             @endforeach
 
                         @endif
 
                         @if(session('response'))
 
-                            <div class="col-md-8 alert alert-success">
+                            <div class="col-md-8 alert alert-danger" data-dismiss="alert" aria-label="close">
                                 {{session('response')}}
                             </div>
 
@@ -73,6 +73,12 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="g-recaptcha" 
+                          data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}">
+                        </div>
+
+
 
                         <input type="hidden" name ="idCrm" id="idCrm">
                         <input type="hidden" name ="emailCrm" id="emailCrm">
