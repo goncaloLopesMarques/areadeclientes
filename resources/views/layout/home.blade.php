@@ -1,6 +1,5 @@
 <main class="mt-5 pt-5">
-        <div class="container">
-
+        <div class="container">    
             <!--Section: Jumbotron-->
             <section class="card wow fadeIn" id="intro" style="visibility: visible; animation-name: fadeIn;">
 
@@ -26,6 +25,14 @@
 
                 <!-- Heading & Description -->
                 <div class="wow fadeIn my-5" style="visibility: visible; animation-name: fadeIn;">
+
+                 @if(session('response'))
+                  <script>
+                  $('#modalSuccess').modal('show');
+                  </script>
+
+                 @endif
+
                     <!--Section heading-->
                     <h2 class="h1 text-center mb-5">O que é a nossa Área de cliente?</h2>
                     <!--Section description-->

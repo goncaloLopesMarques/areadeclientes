@@ -25,7 +25,23 @@
             <div class="modal-footer d-flex justify-content-center">
                 <button class="btn btn-default">Login</button>
             </div>
+            
         </div>
     </div>
 </div>
-                
+
+<div class="modal fade top modal-content-clickable show" id="modalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false" style="display: block; padding-right: 16px;">
+    <div class="modal-dialog modal-frame modal-top modal-notify modal-info" role="document">
+                <!--Content-->
+                <div class="modal-content">
+                    <!--Body-->
+                    <div class="modal-body">
+                        <div class="row d-flex justify-content-center align-items-center">
+                            <p class="pt-3 pr-2">{{session('response')}}</p>
+                        </div>
+                        <a type="button" class="btn btn-outline-info waves-effect" data-dismiss="modal">Fechar</a>
+                    </div>
+                </div>
+                <!--/.Content-->
+    </div>
+</div>
