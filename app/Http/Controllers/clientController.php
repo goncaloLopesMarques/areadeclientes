@@ -41,7 +41,9 @@ class clientController extends Controller
     public function Exclusao(ClientService $service){
 
         $clientId = Auth::user()->idCrm;
-        $result = $service->PedirExclusao($clientId); 
+        $id = Auth::user()->id;
+        $clientEmail = Auth::user()->email;
+        $result = $service->PedirExclusao($clientId,$clientEmail,$id); 
         return redirect('clientHome');
     }
     public function Remocao(ClientService $service){
@@ -72,9 +74,10 @@ class clientController extends Controller
             }
         }
         var_dump($data);
-
+        $id = Auth::user()->id;
         $clientId = Auth::user()->idCrm;
-        $result = $service->AlterarDados($clientId,$data); 
+        $clientEmail = Auth::user()->email;
+        $result = $service->AlterarDados($clientId,$data,$clientEmail,$id); 
         return redirect()->back()->with('message', 'Os seus dados foram alterados com sucesso!');
         
     }

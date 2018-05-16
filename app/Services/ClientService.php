@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Http\Controllers\Controller;
 use App\Black_List;
+use App\Exclusion_List;
+use App\Change_List;
 
 $sessId="";
 
@@ -29,7 +31,7 @@ class clientService {
         return json_decode($result,1);
     }
 
-    public static function AlterarDados($clientId, $data){
+    public static function AlterarDados($clientId, $data,$clientEmail,$id){
         $sessId = (new self)->Login();
 
         $entryArgs = array(
@@ -53,12 +55,17 @@ class clientService {
                   'deleted' => 0,
          );
        
-         $result =(new self)->SuiteCrmRequester('set_entry',$entryArgs);
+         if($result =(new self)->SuiteCrmRequester('set_entry',$entryArgs)){
+            $change_list = new Change_List;
+            $change_list->idUser = $id;
+            $change_list->email = $clientEmail;
+            $change_list->save();
+          }
          (new self)->SuiteCrmRequester('logout',$sessId);
 
       }
 
-    public static function PedirExclusao($clientId){
+    public static function PedirExclusao($clientId,$clientEmail,$id){
         $sessId = (new self)->Login();
 
          $entryArgs = array(
@@ -76,8 +83,12 @@ class clientService {
             //Do not show deleted
                    'deleted' => 0,
           );
-        
-          $result =(new self)->SuiteCrmRequester('set_entry',$entryArgs);
+          if($result =(new self)->SuiteCrmRequester('set_entry',$entryArgs)){
+            $exclude_list = new Exclusion_List;
+            $exclude_list->idUser = $id;
+            $exclude_list->email = $clientEmail;
+            $exclude_list->save();
+          }
           (new self)->SuiteCrmRequester('logout',$sessId);
       }
       public static function PedirRemocao($clientId,$clientEmail,$id){
@@ -163,13 +174,6 @@ class clientService {
             $result = (new self)->SuiteCrmRequester('get_entry',$entryArgs);
             (new self)->SuiteCrmRequester('logout',$sessId);
              //var_dump($result);
-            /*
-           var_dump($result["entry_list"][0]["name_value_list"]["first_name"]["value"]);
-           var_dump($result["entry_list"][0]["name_value_list"]["last_name"]["value"]);
-           var_dump($result["entry_list"][0]["name_value_list"]["phone_mobile"]["value"]);
-           var_dump($result["entry_list"][0]["name_value_list"]["phone_work"]["value"]);
-           var_dump($result["entry_list"][0]["name_value_list"]["email1"]["value"]);
-           */
           $resultArray = array($result["entry_list"][0]["name_value_list"]["first_name"]["value"],$result["entry_list"][0]["name_value_list"]["last_name"]["value"],
                                $result["entry_list"][0]["name_value_list"]["phone_mobile"]["value"],$result["entry_list"][0]["name_value_list"]["phone_work"]["value"],
                                $result["entry_list"][0]["name_value_list"]["email1"]["value"],$result["entry_list"][0]["name_value_list"]["primary_address_street"]["value"],
