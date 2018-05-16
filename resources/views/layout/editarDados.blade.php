@@ -76,8 +76,8 @@
                         <div class="form-group">
                             <div class="col-md-12">
                                 <button class="btn btn-mdb-color waves-effect waves-light" type="submit">Alterar<i class="fa fa-paper-plane-o ml-2"></i></button>
-                                <a class="btn btn-link"  style="color: #cc0000"data-toggle="modal"data-target="#remocaoModal">Remover-me!</a>
-                                <a class="btn btn-link"  style="color: #cc0000"data-toggle="modal"data-target="#exclusaoModal">Quero ser excluido!</a>
+                                <a class="btn btn-mdb-color waves-effect waves-light" style="color: #cc0000"data-toggle="modal"data-target="#remocaoModal">Remover-me&nbsp;<i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                <a class="btn btn-mdb-color waves-effect waves-light" style="color: #cc0000"data-toggle="modal"data-target="#exclusaoModal">Quero ser excluido <i class="fa fa-remove" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </form>
@@ -101,11 +101,11 @@
                 </button>
             </div>
             <div class="modal-body">
-                Ao pedir exclusão não voltará a ser contactado por nós, tem a certeza que pretende continuar?
+                <p> Ao pedir exclusão não voltará a ser contactado por nós, tem a certeza que pretende continuar?</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-                <a class="btn btn-link" href="{{action('clientController@Exclusao')}}"style="color: #cc0000">Continuar</button>
+                <a class="btn btn-link" href="{{action('clientController@Exclusao')}}"style="color: #cc0000">Continuar</a>
             </div>
         </div>
     </div>
@@ -121,11 +121,11 @@
                 </button>
             </div>
             <div class="modal-body">
-                Ao pedir remoção toda a informação que temos sobre si será apagada, tem a certeza que pretende continuar?
+                <p>Ao pedir remoção toda a informação que temos sobre si será apagada, tem a certeza que pretende continuar?</p> 
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-                <a class="btn btn-link" href="{{action('clientController@Remocao')}}" style="color: #cc0000">Continuar</button>
+                <a class="btn btn-link" href="{{action('clientController@Remocao')}}" style="color: #cc0000">Continuar</a>
             </div>
         </div>
     </div>
