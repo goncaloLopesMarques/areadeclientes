@@ -13,12 +13,6 @@
 
 
 
-
-// Route::get('/', function () {
-//     return view('pages.home');
-// });
-
-
 Route::get('/login', function () {
     return view('auth.login');
 });
@@ -32,9 +26,9 @@ Route::get('/contactos', function () {
     return view('pages.contactos');
 });
 
-// Route::get('/home', function () {
-//     return view('pages.home');
-// });
+Route::get('/home', function () {
+     return view('pages.home');
+});
 
 
 

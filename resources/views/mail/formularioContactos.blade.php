@@ -5,12 +5,18 @@
 
 
 
-
+Nome:
 {{ $dadosFormulario->name }}
+<br>
 
+Assunto:
+{{ $dadosFormulario->subject }}
+<br>
+
+Mensagem:
 {{ $dadosFormulario->email }}
 
-{{ $dadosFormulario->subject }}
+
 
 
 The body of your message.

@@ -22,7 +22,7 @@
     <div class="row">
 
         <!--Grid column-->
-        <div class="col-md-6" style="background: whitesmoke;background-clip: border-box;">
+        <div class="col-md-6" style="background: whitesmoke;border: 3px solid white;">
             <form id="contact-form" class="form-horizontal" name="contact-form" method="POST" action="{{ url('/enviarEmail') }}">
 
                 {{ csrf_field() }}
@@ -89,8 +89,8 @@
         <!--Grid column-->
 
         <!--Grid column-->
-        <div class="col-md-6" style="background: whitesmoke;background-clip: border-box;">
-            <ul class="contact-icons" style="list-style-type: none;">
+        <div class="col-md-6" style="background: whitesmoke;border: 3px solid white;">
+            <ul class="contact-icons" style="list-style-type:none;margin-top: 1.5rem;margin-bottom: 1.5rem;">
                 <li><i class="fa fa-map-marker fa-2x"></i>
                     <p>Rua das Laranjeiras, lote 40, Loja B<p>
                     <p>Urbanização do Vale Verde</p>
