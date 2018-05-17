@@ -26,14 +26,14 @@ class clientController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function Index(ClientService $service)
+    public function Index(Request $request,ClientService $service)
     {
         
         $clientId = Auth::user()->idCrm;  
         $result = $service->GetSuiteCrmData($clientId);
         if($result ==0){
-            
-            redirect('/logout');
+            $request->session()->flush();
+            return redirect('/')->with('semDados','Este utilizador não consta no nosso crm, se acha quem tem dados seus contacte-nos por email');
         }
        
         return view('pages.editarDados')->with('result',$result);
