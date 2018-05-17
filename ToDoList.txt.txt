@@ -1,3 +1,4 @@
 
 dentro da area de cliente poder alterar a password;
 load spinner;
+Arranjar os erros que disparam na home page
