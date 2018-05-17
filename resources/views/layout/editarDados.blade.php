@@ -22,13 +22,6 @@
                       <div class="col-md-8 alert alert-danger">
                      {{session('response')}}
                       </div>
-                     <script>
-                     //se nao conseguimos ir buscar dados ao crm mostrar erro e nao mostrar o formolario
-                      var divAutenticado = document.getElementById("editarDados");
-                      var divRemovido = document.getElementById("removido");
-                      divAutenticado.style.display= "none";
-                      divRemovido.style.display="block";
-                     </script>
                      @endif
                 
                 @if ($errors->any())
@@ -197,30 +190,28 @@
         inputArray.push(document.getElementById("emailShow"));
         inputArray.push(document.getElementById("morada"));          
 
-       // vai buscar a info do array php para um array javascript
-     var dataArray = new Array();
-     <?php foreach($result as $key => $val){ ?>
-        dataArray.push('<?php echo $val; ?>');
-     <?php } ?>
-        //Variavel que tem o optin--- 0 se esta optin, 1 se está optOut
-        var optIn = dataArray[dataArray-1];
-     //preenche os inputs com as variaveis
-     emailShow.value = dataArray[4];
-     for (var i = 0, len = inputArray.length; i < len; i++) {
-      inputArray[i].value = dataArray[i];
-     }
-
-     console.log(dataArray[dataArray.length -1])
-     if(dataArray[dataArray.length -1] == 1){
+        // vai buscar a info do array php para um array javascript
+         var dataArray = new Array();
+         <?php foreach($result as $key => $val){ ?>
+         dataArray.push('<?php echo $val; ?>');
+         <?php } ?>
+         //Variavel que tem o optin--- 0 se esta optin, 1 se está optOut
+         var optIn = dataArray[dataArray-1];
+         //preenche os inputs com as variaveis
+         emailShow.value = dataArray[4];
+         for (var i = 0, len = inputArray.length; i < len; i++) {
+         inputArray[i].value = dataArray[i];
+         }
+         if(dataArray[dataArray.length -1] == 1){
          var html ='<button class="btn btn-danger" disabled="disabled" id="pediuExclusao" >Este contacto pediu exclusão</button>'; 
          document.getElementById("excluidoError").innerHTML = html;
-     }
-     if(dataArray[dataArray.length -2] == 1){
-        divAutenticado.style.display= "none";
-        divRemovido.style.display="block";
-     }else{
+         }
+         if(dataArray[dataArray.length -2] == 1){
+         divAutenticado.style.display= "none";
+         divRemovido.style.display="block";
+         }
 
-     }
    }
    window.onload = fillInputs;
+
 </script>
