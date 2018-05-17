@@ -18,15 +18,12 @@
                             
 <section class="section mt-5">
 
-    
-   
-   
 
     <div class="row">
 
         <!--Grid column-->
-        <div class="col-md-8 col-xl-9">
-            <form id="contact-form" name="contact-form" method="POST" action="{{ url('/enviarEmail') }}">
+        <div class="col-md-12">
+            <form id="contact-form" class="form-horizontal" name="contact-form" method="POST" action="{{ url('/enviarEmail') }}">
 
                 {{ csrf_field() }}
 
@@ -80,7 +77,7 @@
                 </div>
                 <!--Grid row-->
 
-                <input class="btn btn-primary" type="submit" value="send">
+                {{-- <input class="btn btn-primary" type="submit" value="send"> --}}
 
             </form>
 
@@ -95,15 +92,19 @@
         <div class="col-md-4 col-xl-3">
             <ul class="contact-icons" style="list-style-type: none;">
                 <li><i class="fa fa-map-marker fa-2x"></i>
-                    <p>San Francisco, CA 94126, USA</p>
+                    <p>Rua das Laranjeiras, lote 40, Loja B<p>
+                    <p>Urbanização do Vale Verde</p>
+                    <p>Marrazes - Leiria 2415-773 Portugal</p>
                 </li>
 
                 <li><i class="fa fa-phone fa-2x"></i>
-                    <p>+ 01 234 567 89</p>
+                    <a href="tel:+351919177906">919 177 906</a>
                 </li>
 
                 <li><i class="fa fa-envelope fa-2x"></i>
-                    <p>contact@mdbootstrap.com</p>
+
+                    <a href="mailto:info@digitalinput.pt?Subject=Apoio%20ao%20Cliente%20-%20website">info@digitalinput.pt</a>
+                    
                 </li>
             </ul>
         </div>

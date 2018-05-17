@@ -36,7 +36,7 @@
 
                 @endif
 
-                    <form id="dados-do-cliente" class="form-horizontal" action="{{ url('/clientHome/AlterarDados') }}" method="post">
+                    <form class="form-horizontal" action="{{ url('/clientHome/AlterarDados') }}" method="post">
 
                         {{ csrf_field() }}
 

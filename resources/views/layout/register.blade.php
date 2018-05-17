@@ -85,7 +85,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-mdb-color waves-effect waves-light">
+                                <button type="submit" class="btn btn-primary waves-effect waves-light">
                                    Registar
                                 </button>
                             </div>
