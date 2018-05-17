@@ -29,12 +29,11 @@ class clientController extends Controller
     public function Index(ClientService $service)
     {
         
-        $clientId = Auth::user()->idCrm;
+        $clientId = Auth::user()->idCrm;  
         $result = $service->GetSuiteCrmData($clientId);
         if($result ==0){
-
-         return view('pages.editarDados')->with('error','Não encontramos dados sobre si no nosso CRM por favor contacte conosco nas informações');
-
+            
+            redirect('/logout');
         }
        
         return view('pages.editarDados')->with('result',$result);

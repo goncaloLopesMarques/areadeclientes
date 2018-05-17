@@ -10,6 +10,11 @@
                      {{session('response')}}
                       </div>
                      @endif
+                     @if(session('semDados'))
+                      <div class="col-md-8 alert alert-danger" data-dismiss="alert" aria-label="close">
+                     {{session('semDados')}}
+                      </div>
+                     @endif
                     <h1 class="mb-4">
                         <strong>Área de Cliente</strong>
                     </h1>
