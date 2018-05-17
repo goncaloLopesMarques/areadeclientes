@@ -1,4 +1,4 @@
-<main class="mt-5 pt-5">
+
         <div class="container">    
             <!--Section: Jumbotron-->
             <section class="card wow fadeIn" id="intro" style="visibility: visible; animation-name: fadeIn;">
@@ -49,4 +49,3 @@
             <!--Section: Cards-->
 
         </div>
-    </main>

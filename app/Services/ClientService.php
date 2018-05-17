@@ -174,8 +174,8 @@ class clientService {
             $result = (new self)->SuiteCrmRequester('get_entry',$entryArgs);
             (new self)->SuiteCrmRequester('logout',$sessId);
              //var_dump($result);
-           
-             if(count($result["entry_list"][0]["name_value_list"]) ==2){
+
+             if(count($result["entry_list"][0]["name_value_list"]) == 2){
                // se nao se conseguir ir buscar dados retornamos um 0 para ser tratado no clientController
               return 0;
              }else{

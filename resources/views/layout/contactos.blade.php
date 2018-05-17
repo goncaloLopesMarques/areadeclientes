@@ -1,4 +1,4 @@
-<main class="mt-5 pt-5">
+
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2" style="margin: 0 auto">
@@ -22,7 +22,7 @@
     <div class="row">
 
         <!--Grid column-->
-        <div class="col-md-12">
+        <div class="col-md-6">
             <form id="contact-form" class="form-horizontal" name="contact-form" method="POST" action="{{ url('/enviarEmail') }}">
 
                 {{ csrf_field() }}
@@ -89,7 +89,7 @@
         <!--Grid column-->
 
         <!--Grid column-->
-        <div class="col-md-4 col-xl-3">
+        <div class="col-md-6">
             <ul class="contact-icons" style="list-style-type: none;">
                 <li><i class="fa fa-map-marker fa-2x"></i>
                     <p>Rua das Laranjeiras, lote 40, Loja B<p>
@@ -125,10 +125,6 @@
             </div>
         </div>
 
-   
-
-
 
 
     </div>
-</main>
