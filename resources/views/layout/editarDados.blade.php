@@ -18,6 +18,18 @@
                      {{ session()->get('message') }}
                     </div>
                   @endif
+                  @if(session('response'))
+                      <div class="col-md-8 alert alert-danger">
+                     {{session('response')}}
+                      </div>
+                     <script>
+                     //se nao conseguimos ir buscar dados ao crm mostrar erro e nao mostrar o formolario
+                      var divAutenticado = document.getElementById("editarDados");
+                      var divRemovido = document.getElementById("removido");
+                      divAutenticado.style.display= "none";
+                      divRemovido.style.display="block";
+                     </script>
+                     @endif
                 
                 @if ($errors->any())
                      

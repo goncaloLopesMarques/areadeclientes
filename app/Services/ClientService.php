@@ -174,11 +174,16 @@ class clientService {
             $result = (new self)->SuiteCrmRequester('get_entry',$entryArgs);
             (new self)->SuiteCrmRequester('logout',$sessId);
              //var_dump($result);
-          $resultArray = array($result["entry_list"][0]["name_value_list"]["first_name"]["value"],$result["entry_list"][0]["name_value_list"]["last_name"]["value"],
-                               $result["entry_list"][0]["name_value_list"]["phone_mobile"]["value"],$result["entry_list"][0]["name_value_list"]["phone_work"]["value"],
-                               $result["entry_list"][0]["name_value_list"]["email1"]["value"],$result["entry_list"][0]["name_value_list"]["primary_address_street"]["value"],
-                               $result["entry_list"][0]["name_value_list"]["invalid_email"]["value"],$result["entry_list"][0]["name_value_list"]["email_opt_out"]["value"]);
-          return $resultArray;
+             if(is_null($result)){
+               // se nao se conseguir ir buscar dados retornamos um 0 para ser tratado no clientController
+              return 0;
+             }else{
+              $resultArray = array($result["entry_list"][0]["name_value_list"]["first_name"]["value"],$result["entry_list"][0]["name_value_list"]["last_name"]["value"],
+              $result["entry_list"][0]["name_value_list"]["phone_mobile"]["value"],$result["entry_list"][0]["name_value_list"]["phone_work"]["value"],
+              $result["entry_list"][0]["name_value_list"]["email1"]["value"],$result["entry_list"][0]["name_value_list"]["primary_address_street"]["value"],
+              $result["entry_list"][0]["name_value_list"]["invalid_email"]["value"],$result["entry_list"][0]["name_value_list"]["email_opt_out"]["value"]);
+               return $resultArray;
+             }
      }
 
 
