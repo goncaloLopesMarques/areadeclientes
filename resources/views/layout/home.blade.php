@@ -5,7 +5,11 @@
 
                 <!-- Content -->
                 <div class="card-body text-white text-center py-5 px-5 my-5">
-
+                     @if(session('response'))
+                      <div class="col-md-8 alert alert-success" data-dismiss="alert" aria-label="close">
+                     {{session('response')}}
+                      </div>
+                     @endif
                     <h1 class="mb-4">
                         <strong>Área de Cliente</strong>
                     </h1>
@@ -25,14 +29,6 @@
 
                 <!-- Heading & Description -->
                 <div class="wow fadeIn my-5" style="visibility: visible; animation-name: fadeIn;">
-
-                 @if(session('response'))
-                  <script>
-                  $('#modalSuccess').modal('show');
-                  </script>
-
-                 @endif
-
                     <!--Section heading-->
                     <h2 class="h1 text-center mb-5">O que é a nossa Área de cliente?</h2>
                     <!--Section description-->
