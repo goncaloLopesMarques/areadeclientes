@@ -99,6 +99,10 @@
                                     <a class="btn btn-link"  style="color: #cc0000"data-toggle="modal"data-target="#exclusaoModal">Quero ser excluido&nbsp;<i type="button" class="fa fa-question-circle-o fa-lg"></i></a>
                                     </span>
 
+                                    <span data-toggle="tooltip" data-placement="bottom" title="Exportar os seus dados para excel!">
+                                    <a class="btn btn-link"  style="color: #cc0000"data-toggle="modal"data-target="#exportacaoModal">Exportar dados&nbsp;<i type="button" class="fa fa-question-circle-o fa-lg"></i></a>
+                                    </span>
+
                                 </div>
                             </div>
                         </div>
@@ -167,6 +171,26 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
                 <button class="btn btn-link" type="submit" style="color: #cc0000">Continuar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal de Exportação -->
+<div class="modal fade" id="exportacaoModal" tabindex="-1" role="dialog" aria-labelledby="exportacaoModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Exportação</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Tem a certeza que pretende exportar os seus dados?</p> 
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+                <a class="btn btn-link" href="{{ route('export.file',['type'=>'xlsx']) }}" style="color: #cc0000">Exportar</a>
             </div>
         </div>
     </div>

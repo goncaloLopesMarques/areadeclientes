@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->boolean('excluido');
             $table->dateTime('exclusaoData')->nullable();
             $table->dateTime('ultimoLogin')->nullable();
-            $table->boolean('alterouData')->nullable();
+            $table->dateTime('alterouData')->nullable();
             $table->string('idCrm')->unique();
             $table->string('image')->nullable();
             $table->rememberToken();

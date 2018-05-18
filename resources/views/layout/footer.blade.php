@@ -5,7 +5,7 @@
 
         <!-- Social icons -->
         <div class="py-3">
-            <a href="https://www.facebook.com/mdbootstrap" target="_blank">
+            <a href="https://www.facebook.com/digitalinputwebmarketing/" target="_blank">
                 <i class="fa fa-facebook mr-3"></i>
             </a>
         </div>

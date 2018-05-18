@@ -59,6 +59,7 @@ Route::get('/clientHome/Remocao', 'clientController@Remocao')->name('clienteRemo
 
 Route::post('/clientHome/AlterarDados', 'clientController@AlterarDados')->name('clienteAlterarDados');
 
+Route::get('export-file/{type}', 'clientController@exportFile')->name('export.file');
 // Route::get('/enviarEmail', function () {
 //     return view('pages.contactos');
 // });

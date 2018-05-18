@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Services\ClientService;
 use Auth;
+use Illuminate\Support\Facades\DB;
 
 $sessId="";
-
+$clientData="";
 class clientController extends Controller
 {
     /**
@@ -46,6 +47,11 @@ class clientController extends Controller
         $id = Auth::user()->id;
         $clientEmail = Auth::user()->email;
         $result = $service->PedirExclusao($clientId,$clientEmail,$id); 
+        
+        DB::table('users')
+            ->where('id', $id)
+            ->update(['exclusaoData' => date('Y-m-d H:i:s')]);
+
         return redirect('clientHome');
     }
     public function Remocao(ClientService $service){
@@ -80,9 +86,37 @@ class clientController extends Controller
         $clientId = Auth::user()->idCrm;
         $clientEmail = Auth::user()->email;
         $result = $service->AlterarDados($clientId,$data,$clientEmail,$id); 
+
+        DB::table('users')
+            ->where('id', $id)
+            ->update(['alterouData' => date('Y-m-d H:i:s')]);
         return redirect()->back()->with('message', 'Os seus dados foram alterados com sucesso!');
         
     }
 
+    public function exportFile(Request $request,ClientService $service){
+        global $clientData;
+        $clientId = Auth::user()->idCrm;  
+        $clientData  = $service->GetSuiteCrmData($clientId);
+        
+         if($clientData  ==0){
+            return redirect('/')->with('errorExcel','Erro a construir o excel, por favor volte a tentar ou entre em contacto conosco');
+         }
+       
+         \Excel::create('Filename', function($excel) {
 
+            $excel->sheet('Sheetname', function($sheet) {
+                global $clientData;
+                $excelKeys = array("Primeiro nome","Ultimo Nome","Telemovel","Telemovel Trabalho", "email", "morada"); 
+                //remove os ultimos 2 indices que contem metadados que nao interessam ao cliente
+                unset($clientData[count($clientData)-2]);
+                unset($clientData[count($clientData)]);
+             
+                $sheet->row(1,$excelKeys);
+                $sheet->row(2,$clientData);
+                $sheet->row(3,$info = array("Se pretender mais informações contacte-nos pela area de cliente"));
+            });
+        })->export('xls');
+    } 
+    
 }
