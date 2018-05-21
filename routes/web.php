@@ -11,12 +11,9 @@
 |
 */
 
-
-
 Route::get('/login', function () {
     return view('auth.login');
 });
-
 
 Route::get('/crm', function () {
     return view('pages.suitecrm');
@@ -30,26 +27,17 @@ Route::get('/home', function () {
      return view('pages.home');
 });
 
-
-
-
-
-
 Route::get('/token', function () {
     return view('pages.token');
 });
 
 Route::post('/registration','RegistersController@registration');
 
-//Route::post('/registo','UserRegisterController@create')->name('userRegister');
-
 Auth::routes();
 
-/*Route::get('/', 'HomeController@Index')->name('home');*/
-
-Route::get('/', function () {
+Route::get('/', ['middleware' => 'guest',function () {
     return view('pages.home');
-});
+}]);
 
 Route::get('/clientHome', 'clientController@Index')->name('clientHome');
 
@@ -60,9 +48,6 @@ Route::get('/clientHome/Remocao', 'clientController@Remocao')->name('clienteRemo
 Route::post('/clientHome/AlterarDados', 'clientController@AlterarDados')->name('clienteAlterarDados');
 
 Route::get('export-file/{type}', 'clientController@exportFile')->name('export.file');
-// Route::get('/enviarEmail', function () {
-//     return view('pages.contactos');
-// });
 
 Route::post('/enviarEmail', 'SendMailController@enviarFormularioContactos');
 
