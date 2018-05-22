@@ -51,5 +51,9 @@ Route::get('export-file/{type}', 'clientController@exportFile')->name('export.fi
 
 Route::post('/enviarEmail', 'SendMailController@enviarFormularioContactos');
 
+Route::get('changePassword','changePasswordController@showChangePasswordForm')->name('changePassword');
+
+Route::post('changePassword','changePasswordController@changePassword')->name('changePassword');
+
 
 
