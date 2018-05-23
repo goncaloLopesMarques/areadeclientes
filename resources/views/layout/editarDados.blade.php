@@ -56,7 +56,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="email" class="grey-text">Email</label> &nbsp;<i type="button" class="fa fa-question-circle-o fa-lg" data-toggle="tooltip" data-placement="right" title="Se pretender alterar o email terá de proceder ao pedido via email."></i> 
+                            <label for="email" class="col-md-4 control-label">Email&nbsp;<i type="button" class="fa fa-question-circle-o fa-lg" data-toggle="tooltip" data-placement="right" title="Se pretender alterar o email terá de proceder ao pedido via email."></i></label> &nbsp; 
                             <div class="col-md-12">
                                 <input type="email" id="emailShow" class="form-control" name="emailShow" disabled>
                                 <input type="hidden" name ="email" id="email">
