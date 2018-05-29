@@ -24,7 +24,7 @@ class SendMailController extends Controller
         // $order = Order::findOrFail($orderId);
 
 
-        Mail::to($request->user())->send(new FormularioContacto($request));
+        Mail::to($request->input('email'))->send(new FormularioContacto($request));
 
 
         return view('pages.contactos');

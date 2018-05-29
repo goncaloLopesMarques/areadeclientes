@@ -86,26 +86,38 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-12">
+                           
 
-                                <div class="btn-group" role="group" aria-label="Basic example">
+                          <div class="row" style="margin:0px!important;padding:0px!important">
 
-                                    <button class="btn btn-primary waves-effect waves-light" type="submit">Alterar<i class="fa fa-paper-plane-o ml-2"></i></button>
-                                     
-                                    <span data-toggle="tooltip" data-placement="bottom" title="Todos os seus dados serão eliminados e deixará de receber as nossas comunicações!">
-                                        <a class="btn btn-link" style="color: #cc0000"data-toggle="modal"data-target="#remocaoModal">Remover-me&nbsp;<i type="button" class="fa fa-question-circle-o fa-lg"></i></a>
-                                    </span>
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                              <button style="width: 100%;margin:0px!important;" class="btn btn-primary waves-effect waves-light" type="submit">Alterar<i class="fa fa-paper-plane-o ml-2" ></i></button>
 
-                                    <span data-toggle="tooltip" data-placement="bottom" title="Deixará de receber as nossas comunicações!">
-                                    <a class="btn btn-link"  style="color: #cc0000"data-toggle="modal"data-target="#exclusaoModal">Quero ser excluido&nbsp;<i type="button" class="fa fa-question-circle-o fa-lg"></i></a>
-                                    </span>
-
-                                    <span data-toggle="tooltip" data-placement="bottom" title="Exportar os seus dados para excel!">
-                                    <a class="btn btn-link"  style="color: #cc0000"data-toggle="modal"data-target="#exportacaoModal">Exportar dados&nbsp;<i type="button" class="fa fa-question-circle-o fa-lg"></i></a>
-                                    </span>
-
-                                </div>
                             </div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                               <span data-toggle="tooltip" data-placement="bottom" title="Todos os seus dados serão eliminados e deixará de receber as nossas comunicações!">
+                                        <a class="btn btn-link" style="color: #cc0000;width:100%;margin:0px!important;" data-toggle="modal"data-target="#remocaoModal">Remover-me&nbsp;<i type="button" class="fa fa-question-circle-o fa-lg"></i></a>
+                                    </span>
+                              
+                            </div>
+
+                             <div class="col-lg-3 col-md-6 col-sm-12">
+                              <span data-toggle="tooltip" data-placement="bottom" title="Deixará de receber as nossas comunicações!" >
+                                    <a class="btn btn-link"  style="color: #cc0000;width:100%;margin:0px!important;" data-toggle="modal"data-target="#exclusaoModal">Quero ser excluido&nbsp;<i type="button" class="fa fa-question-circle-o fa-lg"></i></a>
+                                    </span>
+                              
+                            </div>
+
+                             <div class="col-lg-3 col-md-6 col-sm-12">
+                               <span data-toggle="tooltip" data-placement="bottom" title="Exportar os seus dados para excel!">
+                                    <a class="btn btn-link"  style="color: #cc0000;width:100%;margin:0px!important;" data-toggle="modal"data-target="#exportacaoModal">Exportar dados&nbsp;<i type="button" class="fa fa-question-circle-o fa-lg"></i></a>
+                                    </span>
+                              
+                            </div>
+
+                          </div>
+                    
                         </div>
                 </div>
             </div>
