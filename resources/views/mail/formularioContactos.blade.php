@@ -1,8 +1,4 @@
 @component('mail::message')
-# Introduction
-
-
-
 
 
 Nome:
@@ -14,17 +10,10 @@ Assunto:
 <br>
 
 Mensagem:
-{{ $dadosFormulario->email }}
+{{ $dadosFormulario->message }}
 
 
 
-
-The body of your message.
-
-@component('mail::button', ['url' => ''])
-Button Text
-@endcomponent
-
-Thanks,<br>
+Obrigado,<br>
 {{ config('app.name') }}
 @endcomponent

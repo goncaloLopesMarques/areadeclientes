@@ -23,10 +23,14 @@ class SendMailController extends Controller
     {
         // $order = Order::findOrFail($orderId);
 
-
-        Mail::to($request->user())->send(new FormularioContacto($request));
-
-
+       // dd($request->input('email'));
+       try{
+        $result = Mail::to($request->input('email'))->send(new FormularioContacto($request));
         return view('pages.contactos');
+
+       }catch(\Exception $e){
+       // dd($e);
+       return redirect()->back()->with('message', 'Confira o email inserido, nao esta formatado na forma exemplo@exemplo.com');
+       }
     }
 }

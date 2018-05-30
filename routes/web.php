@@ -15,10 +15,6 @@ Route::get('/login', function () {
     return view('auth.login');
 });
 
-Route::get('/crm', function () {
-    return view('pages.suitecrm');
-});
-
 Route::get('/contactos', function () {
     return view('pages.contactos');
 });
@@ -44,6 +40,10 @@ Route::get('/clientHome', 'clientController@Index')->name('clientHome');
 Route::get('/clientHome/Exclusao', 'clientController@Exclusao')->name('clienteExclusao');
 
 Route::get('/clientHome/Remocao', 'clientController@Remocao')->name('clienteRemocao');
+
+Route::get('/pesquisar', 'SearchController@index');
+
+Route::post('/pesquisar/pesquisar', 'SearchController@pesquisar');
 
 Route::post('/clientHome/AlterarDados', 'clientController@AlterarDados')->name('clienteAlterarDados');
 

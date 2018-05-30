@@ -15612,7 +15612,7 @@ a.waves-light {
 }
 
 .btn-default {
-    background-color: #2bbbad!important;
+    background-color: var(--main-color)!important;
     color: #fff!important
 }
 
@@ -18806,11 +18806,11 @@ body.scrollable {
 }
 
 .modal-dialog.modal-notify.modal-info .modal-header {
-    background-color: #33b5e5
+    background-color: var(--main-color)
 }
 
 .modal-dialog.modal-notify.modal-info .fa {
-    color: #33b5e5
+    color: var(--main-color)
 }
 
 .modal-dialog.modal-notify.modal-info .badge {
