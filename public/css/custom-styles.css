@@ -1,3 +1,11 @@
+:root {
+
+    --main-color: #1c2a48;
+
+    /*    var(--main-color)    */
+}
+
+
 #intro {
   background: #3a7bd5;
   /* fallback for old browsers */
@@ -40,3 +48,50 @@
     transform-origin: 100% 100%;
 }
 
+
+/* GRID */
+div.display-flex{
+
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 0 auto;
+
+}
+
+.row.display-flex>[class*=col-] {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid #fff;
+    border-radius: .25rem;
+}
+
+a.categorias-grid {
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: .25rem;
+    text-align: center;
+    background-color: var(--main-color);
+
+}
+
+div.row.display-flex{
+
+   border: 1px solid #fff;
+   border-radius: .25rem;
+
+}
+
+h3.grid{
+
+    margin: 0px;
+    padding: 1rem 1rem 0px 1rem;
+    font-size: larger;
+}
+
+p.grid{
+
+    margin: 0px;
+    font-size: small;
+}

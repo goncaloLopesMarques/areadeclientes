@@ -1,32 +1,4 @@
 
 dentro da area de cliente poder alterar a password; OK
-load spinner;
+
 Arranjar os erros que disparam na home page
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-NOTAS:
-
-quando alojarmos a aplicação no servidor repor:
-APP_URL=http://localhost/GIT/areadeclientes/public
-
-para:
-APP_URL=http://localhost
