@@ -1,3 +1,13 @@
+                @if(session()->has('Success'))
+                  <div class="col-md-12 alert alert-success" data-dismiss="alert" aria-label="close"  style="-webkit-appearance: none;">
+                     {{ session()->get('message') }}
+                  </div>
+                  @endif
+                  @if(session('Error'))
+                  <div class="col-md-12 alert alert-danger" style="-webkit-appearance: none;">
+                     {{session('response')}}
+                  </div>
+                  @endif
 <div class="container">
     <div class="row">
     <div class="col-md-6 offset-3">
