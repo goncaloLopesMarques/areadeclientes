@@ -149,9 +149,68 @@ class clientService {
       
        return $sessId;
       }
-      public function SearchEmail(){
+
+      public function validateEmail($email){
+        //esta variavel contem todos os emails, o resultado d afiltagrem do objecto devolvido pelo crm  
+        $allEmails = array();
+        //esta variavel serve para guardar o valor do string compare
+        $comparacao;
+        //esta função vai buscar um objecto com toda a informação dos contactos
+        $allData = (new self)->RetreaveAllEmails();
+        //variavel para retornar ao controlador
+        $result =0;
+        //depois de ter todos os emails comparamos com o email fornecido pelo utilizador
+        //Se der match devolve 1
+        //se nao encontrar devolve 0
+        for ($i = 0; $i <= $allData["total_count"] -1; $i++) {
+          array_push($allEmails,$allData["entry_list"][$i]["name_value_list"]["email1"]["value"]);
+        }
+
+          for($j = 0; $j <= count($allEmails)-1 ; $j++){
+            //string compare
+            //0 - if the two strings are equal
+            //<0 - if string1 is less than string2
+            //>0 - if string1 is greater than string2
+            $comparacao = strcmp($email,$allEmails[$j]);
+
+            if($comparacao == 0){
+              $result = 1;
+              return $result;
+            }
+          }
+          
+          return $result;
+      }
+
+
+      public function RetreaveAllEmails(){
+
         $sessId = (new self)->Login();
-        return $sessId;
+
+        $entryArgs = array(
+          //Session id - retrieved from login call
+           'session' => $sessId,
+          //Module to get_entry_list for
+           'module_name' => 'Contacts',
+          //Filter query - Added to the SQL where clause,
+           'query' => "",
+          //Order by - unused
+           'order_by' => '',
+          //Start with the first record
+           'offset' => 0,
+          //Return the id and name fields
+           'select_fields' => array('email1'),
+          //Link to the "contacts" relationship and retrieve the
+          //First and last names.
+          //Show 10 max results
+               'max_results' => '',
+          //Do not show deleted
+               'deleted' => 0,
+          );
+
+        $result = (new self)->SuiteCrmRequester('get_entry_list',$entryArgs);
+
+        return $result;
       }
 
       public function GetSuiteCrmData($clientId){
@@ -176,6 +235,7 @@ class clientService {
                      'deleted' => 0,
             );
             $result = (new self)->SuiteCrmRequester('get_entry',$entryArgs);
+
             (new self)->SuiteCrmRequester('logout',$sessId);
              //var_dump($result);
 

@@ -19,7 +19,13 @@ class SearchController extends Controller
     }
 
     public function pesquisar(Request $request, ClientService $service){
-        $sessId = $service->SearchEmail();
-        dd($sessId);
+        $result = $service->validateEmail($request->input("email"));
+
+        if($result == 1){
+            return redirect('/pesquisar')->with('Success','O seu email consta na nossa base de dados');
+        }else{
+            return redirect('/pesquisar')->with('Error','O seu email não consta na nossa base de dados');
+        }
+        dd($result);
     }
 }
