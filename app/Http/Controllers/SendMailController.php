@@ -36,4 +36,18 @@ class SendMailController extends Controller
         
        }
     }
+
+    public function enviarEmailDeRegisto($email){
+        try{
+            $result = Mail::to($email)->send(new EmailRegisto($email));
+           
+            return view('pages.searchPage')->with('Success',"Email enviado com sucesso");
+    
+            //Mail::to($request->user())->send(new FormularioContacto($request));
+           }catch(Exception $e){
+            dd($e);
+            return view('pages.searchPage')->with('Message',"Erro ao enviar o email, por favor contacte-nos por telefone");
+            
+           }
+    }
 }
