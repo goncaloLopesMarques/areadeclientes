@@ -11,7 +11,7 @@
 <div class="container">
     <div class="row">
     <div class="col-md-6 offset-3">
-        <form class="col-md-12" action="http://127.0.0.1/gitProjects/areadeclientes/public/pesquisar/pesquisar" method="post" style="
+        <form class="col-md-12" action="{{ url('/pesquisar/pesquisar') }}" method="post" style="
     width: 100%;">
     <input type="hidden" name="_token" value="Udix8UuD3rrDYghQzRnkaubEhDRuRKV4N2C50mbt">
     <p class="h4 text-center mb-4">Já é nosso cliente?</p>
