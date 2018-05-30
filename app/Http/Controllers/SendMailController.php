@@ -26,11 +26,14 @@ class SendMailController extends Controller
        // dd($request->input('email'));
        try{
         $result = Mail::to($request->input('email'))->send(new FormularioContacto($request));
-        return view('pages.contactos');
+       
+        return view('pages.contactos')->with('Success',"Email enviado com sucesso");
 
-        Mail::to($request->user())->send(new FormularioContacto($request));
-
-
-        return view('pages.contactos');
+        //Mail::to($request->user())->send(new FormularioContacto($request));
+       }catch(Exception $e){
+        dd($e);
+        return view('pages.contactos')->with('Message',"Erro ao enviar o email, por favor contacte-nos por telefone");
+        
+       }
     }
 }

@@ -174,8 +174,9 @@ class clientService {
             $comparacao = strcmp($email,$allEmails[$j]);
 
             if($comparacao == 0){
+              $id = $allData["entry_list"][$j]["id"]; 
               $result = 1;
-              return $result;
+              return array($result,$id);
             }
           }
           

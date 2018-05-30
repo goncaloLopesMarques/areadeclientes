@@ -20,7 +20,8 @@ class SearchController extends Controller
 
     public function pesquisar(Request $request, ClientService $service){
         $result = $service->validateEmail($request->input("email"));
-
+        dd($result);
+        
         if($result == 1){
             return redirect('/pesquisar')->with('Success','O seu email consta na nossa base de dados');
         }else{
