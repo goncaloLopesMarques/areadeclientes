@@ -1,5 +1,33 @@
 <script src='https://www.google.com/recaptcha/api.js'></script>
 
+<div class="modal fade" id="modalPush" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-notify modal-info" role="document">
+        <!--Content-->
+        <div class="modal-content text-center">
+            <!--Header-->
+            <div class="modal-header d-flex justify-content-center">
+                <p class="heading">Instruções</p>
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+
+                <i class="fa fa-bell fa-4x animated rotateIn mb-4"></i>
+
+                <p>Para se registrar só precisa de escolher um nome de utilizador, uma palavra passe a seu gosto e
+                 aceitar os termos e condições</p>
+
+            </div>
+
+            <!--Footer-->
+            <div class="modal-footer">
+                <a type="button" class="btn btn-primary waves-effect waves-light" data-dismiss="modal">Fechar</a>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2" style="margin: 0 auto">
@@ -9,11 +37,8 @@
                 <h3 class="my-3 h3 text-center">Registo</h3>
 
                 <div class="panel-body">
-
                     <form class="form-horizontal" method="POST" action="{{ url('/registration') }}">
-
                         {{ csrf_field() }}
-
                         @if(count($errors)>0)
 
                             @foreach($errors->all() as $error)
@@ -69,7 +94,9 @@
                             <div class="col-md-12">
                                 <div class="checkbox">
                                     <input type="checkbox" class="form-check-input" id="checkbox100" name="checked" value="true">
-                                     <label class="form-check-label" for="checkbox100">Aceito o registo</label>
+                                     <label class="form-check-label" for="checkbox100">Concordo e aceito com a
+                                          <a href="https://www.digitalinput.pt/politica-de-privacidade/" style="color:blue;">Política de Privacidade</a>
+                                     </label>
                                 </div>
                             </div>
                         </div>
@@ -90,9 +117,13 @@
                                 </button>
                             </div>
                         </div>
+
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+

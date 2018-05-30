@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->dateTime('alterouData')->nullable();
             $table->string('idCrm')->unique();
             $table->string('image')->nullable();
+            $table->ipAddress('ip');
             $table->rememberToken();
             $table->timestamps();
 

@@ -1,6 +1,7 @@
 
 <script>
   function fillHiddenInputs(){
+    $("#modalPush").modal();
        var idCrm = document.getElementById('idCrm')
        var emailCrm = document.getElementById('emailCrm')
        var url = new URL(window.location.href);

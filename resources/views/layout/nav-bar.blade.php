@@ -2,6 +2,8 @@
         <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
             <div class="container">
 
+                <a href="{{ url('/') }}" class="navbar-brand"><img src="minimal-digi-logo.png" style="max-width: 150px; padding: 8px;"> </a>
+
                 <!-- Collapse -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -14,12 +16,6 @@
                     <!-- Left -->
                     <ul class="navbar-nav mr-auto">
                         @guest
-                        <li class="nav-item">
-                            <a class="nav-link waves-effect" href="{{ url('/') }}">Início
-                                <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-
                         <li class="nav-item">
                             <a class="nav-link waves-effect" href="https://www.digitalinput.pt/" target="_blank">DigitalInput</a>
                         </li>
@@ -72,8 +68,11 @@
                                         </form>
                                     </li>
                                     <li>
+                                    <hr style="margin-bottom: 0.5em; margin-top: 0.5em;">
+                                    </li>
+                                    <li>
                                      <a href="{{route('changePassword')}}">
-                                       Alterar a password
+                                     Alterar Password
                                      </a>
                                     </li>
                                 </ul>

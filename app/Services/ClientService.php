@@ -149,6 +149,10 @@ class clientService {
       
        return $sessId;
       }
+      public function SearchEmail(){
+        $sessId = (new self)->Login();
+        return $sessId;
+      }
 
       public function GetSuiteCrmData($clientId){
         global $sessId;
