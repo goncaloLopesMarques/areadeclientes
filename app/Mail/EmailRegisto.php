@@ -11,16 +11,15 @@ class EmailRegisto extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $dadosFormulario;
-
+    public $dados;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Request $request)
+    public function __construct(array $dados)
     {
-        $this->dadosFormulario  = $request;
+        $this->dados = $dados;  
     }
 
     /**
@@ -30,7 +29,7 @@ class EmailRegisto extends Mailable
      */
     public function build()
     {
-        return $this->from('noreply@digitalinput.pt')
+        return $this->from('epd@digitalinput.pt')
                     ->markdown('mail.emailRegisto');
     }
 }

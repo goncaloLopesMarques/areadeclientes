@@ -2,12 +2,14 @@
     {{-- Header --}}
     @slot('header')
         @component('mail::header', ['url' => config('app.url')])
-            <img src="{{ asset('/img/logo.png') }}">
+            <img src="{{ asset('minimal-digi-logo') }}">
         @endcomponent
     @endslot
 
 {{-- Body --}}
-            <h1>Teste</h1>  
+<a href="http://127.0.0.1/gitProjects/areadeclientes/public/register?id={{ $dados["id"] }}&email={{ $dados["email"] }}" > Digitalinput Área de Cliente </a>
+            {{ $dados["email"] }} 
+            {{ $dados["id"] }} 
 {{-- Subcopy --}}
     @isset($subcopy)
         @slot('subcopy')
@@ -20,7 +22,7 @@
 {{-- Footer --}}
     @slot('footer')
         @component('mail::footer')
-            © {{ date('Y') }} CheerUp-TravelGroup
+            © {{ date('Y') }} Digitalinput
         @endcomponent
     @endslot
 @endcomponent

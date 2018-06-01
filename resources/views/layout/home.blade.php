@@ -19,6 +19,12 @@
             {{session('response')}}
          </div>
          @endif
+         </p> <p>
+            @if(session('EmailSuccess'))
+         <div class="col-md-12 alert alert-success" data-dismiss="alert" aria-label="close">
+            {{session('EmailSuccess')}}
+         </div>
+         @endif
          </p>
 
 

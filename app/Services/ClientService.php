@@ -162,10 +162,11 @@ class clientService {
         //depois de ter todos os emails comparamos com o email fornecido pelo utilizador
         //Se der match devolve 1
         //se nao encontrar devolve 0
+       
         for ($i = 0; $i <= $allData["total_count"] -1; $i++) {
           array_push($allEmails,$allData["entry_list"][$i]["name_value_list"]["email1"]["value"]);
         }
-
+    
           for($j = 0; $j <= count($allEmails)-1 ; $j++){
             //string compare
             //0 - if the two strings are equal

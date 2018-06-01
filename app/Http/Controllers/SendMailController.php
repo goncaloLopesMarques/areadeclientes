@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 // use App\Order;
 use App\Mail\FormularioContacto;
+use App\Mail\Emailregisto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\Controller;
@@ -37,17 +38,22 @@ class SendMailController extends Controller
        }
     }
 
-    public function enviarEmailDeRegisto($email){
+    public function enviarEmailDeRegisto(Request $request){
+        //dd($request->input());
+        $data=[
+            'email' => $request->input('email'),
+            'id' => $request->input('id'),
+        ];
         try{
-            $result = Mail::to($email)->send(new EmailRegisto($email));
+            $result = Mail::to($data["email"])->send(new EmailRegisto($data));
            
-            return view('pages.searchPage')->with('Success',"Email enviado com sucesso");
+            return redirect('/')->with('EmailSuccess','Foi enviado um email com as instruções!');
     
-            //Mail::to($request->user())->send(new FormularioContacto($request));
            }catch(Exception $e){
             dd($e);
-            return view('pages.searchPage')->with('Message',"Erro ao enviar o email, por favor contacte-nos por telefone");
+            return redirect()->back()->with('Message','Erro ao enviar o email.');
             
            }
     }
+
 }
