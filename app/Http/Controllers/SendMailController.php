@@ -43,6 +43,7 @@ class SendMailController extends Controller
         $data=[
             'email' => $request->input('email'),
             'id' => $request->input('id'),
+            'url' => $_ENV['APP_URL_REGISTO'].$request->input('id')."&email=".$request->input('email'),
         ];
         try{
             $result = Mail::to($data["email"])->send(new EmailRegisto($data));

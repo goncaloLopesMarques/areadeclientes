@@ -20,10 +20,11 @@ class SearchController extends Controller
 
     public function pesquisar(Request $request, ClientService $service){
         $data = array();
-
+    
         $result = $service->validateEmail($request->input("email"));
       
         if($result[0] == 1){
+            
             $data=[
                 'success' => 'O seu email consta na nossa base de dados',
                 'email' => $request->input("email"),
